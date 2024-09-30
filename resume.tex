@@ -1,0 +1,40 @@
+\documentclass[11pt]{article}
+
+\usepackage[french]{babel}
+
+\usepackage[T1]{fontenc}
+
+\usepackage[shortlabels]{enumitem}
+
+\usepackage[margin=2cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Latex document sectionning
+% 
+%   -1	\part{part}
+%    0	\chapter{chapter}
+%    1	\section{section}
+%    2	\subsection{subsection}
+%    3	\subsubsection{subsubsection}
+%    4	\paragraph{paragraph}
+%    5	\subparagraph{subparagraph}
+% 
+% Rule of thumb: use section as the top-level document command
+%                unless you are making a book or long report
+
+\title{MAT120 - Algèbre Linéaire - Résumé}
+\author{Étienne Pinard}
+\date{\today}
+
+\begin{document}
+
+% This is to disable the spacing before a colon of the french babel package. Use \shorthandon{characters} to renable it
+\shorthandoff{:}
+
+\maketitle
+\input{chapitre1}
+
+
+\end{document}
