@@ -1,6 +1,9 @@
+.vscode
 *.aux
 *.fls
 *.log
 *.fdb_latexmk
 *.gz
-.vscode
+*.out
+*.toc
+*.dvi

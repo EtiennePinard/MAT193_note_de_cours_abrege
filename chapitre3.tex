@@ -1,115 +1,121 @@
-\section*{Chapitre 3: Espace vectorielle de dimension finie}
+\section{Chapitre 3: Espace vectorielle de dimension finie}
+\begin{definition}
+      Un ensemble $V$ est un espace vectorielle sur un corps $F$
+      si \begin{enumerate}[1)]
+            \item $V$ est fermé sous l'addition c-à-d, $
+                        \forall \ (v_1, v_2 \in V), \ v_1 + v_2 \in V
+                  $
+            \item $V$ est fermé sous la multication par un scalaire c-à-d, $
+                        \forall \ (v \in V, \ \alpha \in F), \ \alpha v \in V
+                  $
+      \end{enumerate}
+      Les éléments de $V$ sont appellés \guillemetleft \ vecteurs \guillemetright.
+\end{definition}
+\begin{remark}
+      L'espace vectorielle le plus simple est $V = \{ 0_v \}$, ou $0_v$ est l'élément nulle.
+\end{remark}
+\begin{definition}
+      Un scalaire $\alpha$ est un élément du corps $F$ associé à l'espace vectorielle.
+\end{definition}
+\noindent
+Dans notre cas, ce corps est soit les nombres réels $\mathbb{R}$, ou les nombres complexes $\mathbb{C}$.
 
-\subsection*{Définition}
-\begin{itemize}
-    \item[] Un ensemble $V$ est un espace vectorielle sur un corps ($\mathbb{R}$, $\mathbb{C}$)
-          si \begin{enumerate}[1)]
-              \item $V$ est fermé sous l'addition c-à-d, \begin{equation*}
-                        v_1, v_2 \in V \implies v_1 + v_2 \in V
-                    \end{equation*}
-              \item $V$ est fermé sous la multication par un scalaire c-à-d, \begin{equation*}
-                        v \in V, \ \alpha \text{ scalaire} \implies \alpha v \in V
-                    \end{equation*}
-          \end{enumerate}
-    \item[] Un scalaire est un élément du corps de l'espace vectorielle. Dans notre cas, ce corps
-          est soit les nombres réels $\mathbb{R}$, ou les nombres complexes $\mathbb{C}$.
-    \item[] L'espace vectorielle le plus simple est $V = \{ 0_v \}$, ou $0_v$ est
-          l'élément nulle.
-    \item[] Pour vérifier si un ensemble est un espace vectorielle, il suffit
-          de vérifier si l'ensemble respectent les deux propriétés de fermeture.
-\end{itemize}
+\subsection{Base d'un espace vectorielle}
+\noindent
+Soit un espace vectorielle $V$ et $\alpha_1, \alpha_2, \ldots, \alpha_n$ des scalaires.
 
-\subsection*{Combinaisons linéaire}
-\begin{itemize}
-    \item[] \textbf{Définition} \begin{itemize}
-              \item[] Soit un espace vectorielle $V$ avec $v_1, v_2, \ldots, v_n \in V$ et $\alpha_1, \alpha_2, \ldots, \alpha_n$ des scalaires.
-              \item[] Alors $\alpha_1 v_1 + \alpha_2 v_2 + \ldots + \alpha_n v_n$ est une combinaison linéaire de
-                    $v_1, v_2, \ldots, v_n$
-          \end{itemize}
-    \item[] \textbf{Ensemble générateur} \begin{itemize}
-              \item[] Un ensemble $S = \{ u_1, u_2, \ldots, u_n \} \subset V$, est un ensemble générateur
-                    si tout les éléments de $V$ peuvent être exprimé comme une combinaison linéaire des vecteurs
-                    dans $S$.
-              \item[] Pour prouver qu'un ensemble est un ensemble générateur, il faut habituellement
-                    prendre un élément général de l'espace vectorielle et exprimer cet élément général
-                    comme une combinaison linéaire des vecteurs dans $S$.
-          \end{itemize}
-    \item[] \textbf{Indépendance linéaire} \begin{itemize}
-              \item[] Un ensemble $S = \{ u_1, u_2, \ldots, u_n \} \subset V$, est un linéaire indépendant
-                    si \begin{equation*}
-                        \alpha_1 u_1 + \alpha_2 u_2 + \ldots + \alpha_n u_n = 0_v \implies \alpha_1 = \alpha_2 = \ldots = \alpha_n = 0
-                    \end{equation*}
-                    en d'autres mots, que cette équation a seulement la solution nulle (trivial). Si
-                    ce n'est pas le cas, alors $S$ est linéairement dépendant, ou lié.
-              \item[] \textbf{Déterminer l'indépendance linéaire d'un ensemble $S \subset \mathbb{R}^n$} \begin{enumerate}[1), itemsep = 0.5em]
-                        \item[] Soit $S = \{ u_1, u_2, \ldots, u_m \} \subset \mathbb{R}^n$ avec $u_j = \begin{pmatrix}
-                                      u_{1j} \\
-                                      u_{2j} \\
-                                      \dots  \\
-                                      u_{nj}
-                                  \end{pmatrix}, \ u_{kj} \in \mathbb{R}$
-                        \item[] Il a $m$ vecteurs dans $S$ et chaque vecteur à $n$ élément.
-                        \item[] De plus, considérons la matrice $M = \begin{pmatrix}
-                                      u_{11} & u_{12}      & \dots  & u_{1m} \\
-                                      u_{21} & u_{22}      & \dots  & u_{2m} \\
-                                      \vdots & \phantom{u} & \ddots & \vdots \\
-                                      u_{n1} & u_{n2}      & \dots  & u_{nm}
-                                  \end{pmatrix} = \begin{pmatrix}
-                                      u_1 & u_2 & \ldots & u_m
-                                  \end{pmatrix}$
-                        \item[] Remarquons que $M$ à les vecteurs de $S$ commes colonnes.
-                        \item La première méthode consiste à échelonner la matrice $M^T = \begin{pmatrix}
-                                      (u_1)^T \\
-                                      (u_2)^T \\
-                                      \ldots  \\
-                                      (u_m)^T
-                                  \end{pmatrix}$. Ici $M^T$ à les vecteurs de $S$ commes lignes. En échelonnant
-                              $M$, on peut arriver à deux conclusions, soit \begin{enumerate}[1.]
-                                  \item La forme échelonné de $M^T$ contient une ligne nulle,
-                                        alors $S$ est lié.
-                                  \item La forme échelonné de $M^T$ ne contient pas de ligne nulle,
-                                        alors $S$ est linéairement indépendant.
-                              \end{enumerate}
-                        \item La deuxième méthode consiste à échelonner la matrice $M$. En échelonnant $M$, on peut arriver à deux conclusions, soit \begin{enumerate}[1.]
-                                  \item La forme échelonné de $M$ contient plus ou égale de ligne nulle qu'il a de vecteur dans $S$,
-                                        alors $S$ est lié.
-                                  \item La forme échelonné de $M$ contient moins de ligne nulle qu'il a de vecteur dans $S$,
-                                        alors $S$ est linéairement indépendant.
-                              \end{enumerate}
-                    \end{enumerate}
-          \end{itemize}
-\end{itemize}
+\subsubsection{Combinaison linéaire}
+\noindent
+Soit $v_1, v_2, \ldots, v_n \in V$
+\begin{definition}
+      $\alpha_1 v_1 + \alpha_2 v_2 + \ldots + \alpha_n v_n$ est une combinaison linéaire de
+      $v_1, v_2, \ldots, v_n$
+\end{definition}
 
-\subsection*{Base d'un espace vectorielle} \begin{itemize}
+\subsubsection{Ensemble générateur}
+\begin{definition}
+      Un ensemble $S = \{ u_1, u_2, \ldots, u_n \} \subset V$, est un ensemble générateur si
+      \[ \forall v \in V  \ \exists \alpha_1, \ldots, \alpha_n \text{ scalaire t.q. } v = \alpha_1 u_1 + \ldots + \alpha_n u_n\]
+\end{definition}
+\noindent
+Note: Pour prouver qu'un ensemble est un ensemble générateur, il faut habituellement
+prendre un élément général de l'espace vectorielle et exprimer cet élément général
+comme une combinaison linéaire des vecteurs dans $S$.
 
-    \item[] \textbf{Définition} \begin{itemize}[itemsep = 0.5em]
-              \item[] Un ensemble $S = \{ u_1, u_2, \ldots, u_n \} \subset V$, est une base de $V$ si
-                    $S$ est un ensemble générateur de $V$ et $S$ est linéairement indépendant.
-              \item[] On peut aussi définir la dimension de $V$ comme $\dim_C V = |S|$,
-                    ou $|S|$ est le nombre d'élément dans $S$ et $C$ est le corps que l'espace vectorielle
-                    est défini sur. Dans notre cas, $C = \mathbb{R}$ ou $C = \mathbb{C}$
-              \item[] De plus, un espace vectorielle a souvent une base canonique, soit une base
-                    plus naturel à utiliser. Par exemple, canonique de $\mathbb{R}^n$ est $S = \{ e_1, e_2, \ldots, e_n \}$. 
-                    On peut donc dire que $\dim_\mathbb{R} \mathbb{R}^n = n$
-          \end{itemize}
-    \item[] \textbf{Représentation d'un vecteur dans une base} \begin{itemize}[itemsep = 0.5em]
-              \item[] Soit $V$ un espace vectorielle avec $\dim V = n$
-              \item[] Soit $B = \{ u_1, u_2, \ldots, u_n \}$ une base de $V$
-              \item[] Cela veut dire que $ \forall v \in V  \ \exists \alpha_1, \ldots, \alpha_n \text{ scalaire t.q. } v = \alpha_1 u_1 + \ldots + \alpha_n u_n$
-              \item[] Les scalaires $\alpha_1, \ldots, \alpha_n$ sont appellés les coordonnées de $v$ dans la base $B$.
-              \item[] On peut donc représenter $v$ dans la base $B$ comme \begin{equation*}
-                [v]_B = \begin{pmatrix}
-                    \alpha_1 \\
-                    \alpha_2 \\
-                    \vdots \\
-                    \alpha_n
-                \end{pmatrix}
-              \end{equation*}
-            \item[] Donc on peut représenter un élément de $V$ comme un élément dans $\mathbb{R}^n$ avec l'aide d'une base
-          \end{itemize}
-    \item[] \textbf{Propriétés d'une base d'un espace vectorielle} \begin{enumerate}[1)]
-        \item $v_1 = v_2 \iff [v_1]_B = [v_2]_B$
-        \item Soit $S = \{ u_1, u_2, \ldots, u_n \} \subset V$ \\
-        Si $S^\prime = \{ [u_1]_B, [u_2]_B, \ldots, [u_n]_B \}$ est linéairement indépendant alors $S$ l'est aussi 
-    \end{enumerate}
-\end{itemize}
+\subsubsection{Indépendance linéaire}
+\begin{definition}
+      Un ensemble $S = \{ u_1, u_2, \ldots, u_n \} \subset V$, est un linéaire indépendant si
+      \[
+            \alpha_1 u_1 + \alpha_2 u_2 + \ldots + \alpha_n u_n = 0_v \implies \alpha_1 = \alpha_2 = \ldots = \alpha_n = 0
+      \]
+      sinon $S$ est linéairement dépendant, ou lié.
+\end{definition}
+
+\subsubsection{Déterminer l'indépendance linéaire de \texorpdfstring{$S \subset \R^n$}{S subset of Rn}}
+\noindent
+Soit $S = \{ u_1, u_2, \ldots, u_m \} \subset \R^n$ avec $u_j = \begin{pmatrix}
+            u_{1j} & u_{2j} & \dots  & u_{nj} \end{pmatrix}^T, \ u_{kj} \in \R$ et $|S| = m$ \\
+Considérons la matrice $M = \begin{pmatrix} u_1 & u_2 & \ldots & u_m \end{pmatrix}$. \\
+Pour déterminer l'indépendance linéaire de $S$ à partir de $M$, il faut
+échelonner la matrice $M$ ou la matrice $M^T$. En échelonnant $M$ ou $M^T$, on peut arriver 
+à deux conclusions, soit \begin{enumerate}[1.]
+      \item $\text{rg}(M^T) < m$ ou $\text{rg}(M) < m \implies S$ est lié.
+      \item $\text{rg}(M^T) = m$ ou $\text{rg}(M^T) = m \implies S$ est linéairement indépendant.
+\end{enumerate}
+Note: Échelonner $M^T$ donne des résultats plus simple à interpréter puisque 
+$0 \leq \text{rg}(M^T) \leq m$. Alors si $M^T$ échelonné contient une ligne nulle
+on sait automatiquement que $S$ est lié, ce qui n'est pas le cas si $M$ échelonné
+contient une ligne nulle.
+
+\subsubsection{Base d'un espace vectorielle}
+\begin{definition}
+      Un ensemble $B = \{ u_1, u_2, \ldots, u_n \} \subset V$, est une base de $V$ si
+      $B$ est un ensemble générateur de $V$ et $B$ est linéairement indépendant.
+\end{definition}
+\begin{definition}
+      La dimension de $V$ est $\dim_F V = |B|$, ou $|B|$ est le nombre d'élément dans la base $B$
+      de $V$ et $F$ est le corps de l'espace vectorielle.
+\end{definition}
+\begin{theorem}
+      Le nombre de vecteur dans une base de $V$ ne dépend pas de la base choisi.
+\end{theorem}
+\begin{remark}
+      Le théorème qui précède nous permet de définir la dimension de $V$ comme étant le
+      nombre de vecteurs dans une base de $V$, puisque toutes les bases de $V$ contiennent
+      le même nombre de vecteurs.
+\end{remark}
+\paragraph{Base canonique:}
+Un espace vectorielle a souvent une base canonique, soit une base plus naturel à utiliser.
+Par exemple, la base canonique de $\R^n$ est $S = \{ e_1, e_2, \ldots, e_n \}$.
+On peut donc dire que $\dim_\R \R^n = n$
+
+\subsubsection{Représentation d'un vecteur dans une base}
+\noindent
+Soit $V$ un espace vectorielle avec $\dim_F V = n$, et $B = \{ u_1, u_2, \ldots, u_n \}$ une base de $V$. \\
+Cela veut dire que $ \forall \ v \in V  \ \exists \ \alpha_1, \ldots, \alpha_n \text{ scalaire t.q. } v = \alpha_1 u_1 + \ldots + \alpha_n u_n$
+\begin{definition}
+      Les scalaires $\alpha_1, \ldots, \alpha_n$ sont appellés les coordonnées de $v$ dans la base $B$.
+\end{definition}
+\begin{definition}
+      La représentation de $v$ dans la base $B$ est noté $[v]_B$ et est exprimé
+      \[
+            [v]_B = \begin{pmatrix}
+                  \alpha_1 \\
+                  \alpha_2 \\
+                  \vdots   \\
+                  \alpha_n
+            \end{pmatrix} \in F^n
+      \]
+\end{definition}
+
+\subsubsection{Propriétés d'une base d'un espace vectorielle}
+\begin{enumerate}[a)]
+      \item Soit $v_1, v_2 \in V$, alors $v_1 = v_2 \iff [v_1]_B = [v_2]_B$
+      \item Soit $S = \{ u_1, u_2, \ldots, u_n \} \subset V$ \\
+            Si $S^\prime = \{ [u_1]_B, [u_2]_B, \ldots, [u_n]_B \}$ est linéairement indépendant alors $S$ l'est aussi
+      \item La représentation dans une base est linaire, ce qui veut dire qu'elle satisfait ces deux propriétés:
+            \begin{enumerate}[1.]
+                  \item $[v_1 + v_2]_B = [v_1]_B + [v_2]_B$
+                  \item $[\alpha v]_B = \alpha [v]_B$
+            \end{enumerate}
+\end{enumerate}

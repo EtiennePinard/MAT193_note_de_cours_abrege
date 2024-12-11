@@ -1,32 +1,28 @@
 \documentclass[11pt]{article}
 
+\usepackage[T1]{fontenc}
 \usepackage[french]{babel}
 
-\usepackage[T1]{fontenc}
-
 \usepackage[shortlabels]{enumitem}
-
 \usepackage[margin=2cm]{geometry}
+\usepackage[hidelinks]{hyperref}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
 
-% Latex document sectionning
-% 
-%   -1	\part{part}
-%    0	\chapter{chapter}
-%    1	\section{section}
-%    2	\subsection{subsection}
-%    3	\subsubsection{subsubsection}
-%    4	\paragraph{paragraph}
-%    5	\subparagraph{subparagraph}
-% 
-% Rule of thumb: use section as the top-level document command
-%                unless you are making a book or long report
+\theoremstyle{definition}
+\newtheorem{definition}{Définition}[section]
+\newtheorem{theorem}{Théorème}[section]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remarque}
+
+\usepackage{math_and_phy}
 
 \title{MAT193 - Algèbre Linéaire - Résumé}
 \author{Étienne Pinard}
-\date{\today}
+\date{Compilé le \today}
 
 \begin{document}
 
@@ -34,7 +30,9 @@
 \shorthandoff{:}
 
 \maketitle
-\input{chapitre1}
+\tableofcontents
+
+\include{chapitre1}
 \include{chapitre2}
 \include{chapitre3}
 

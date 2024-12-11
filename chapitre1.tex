@@ -1,133 +1,123 @@
-% The asterisk is for the unumbered section
-\section*{Chapitre 1: Nombres Complexes}
+\section{Chapitre 1: Nombres Complexes}
 
-\subsection*{Représentation des nombres complexes}
-% Please note that I used the three ways to enter inline math mode in this list. This is just to use them as I am still a beginner at Latex
-\begin{itemize}[itemsep = 0.5em]
-    \item[] Forme algégrique (cartésienne): \begin{math}z = x + iy \quad x,y \in \mathbb{C} \end{math}
-    \item[] Forme polaire: $z = r(\cos(\theta)+i\sin(\theta)) \quad r, \theta \in \mathbb{R}$
-    \item[] Forme exponentielle: \(z = re^{i\theta} \quad r, \theta \in \mathbb{R} \)
-  \end{itemize}
+\subsection{Définition des nombres complexes}
+\noindent
+Rappel: les unités de $\R$ sont $1$ et $-1$ 
+\begin{definition}
+    $i$ est l'unité imaginaire telle que $i^2 = -1$ 
+\end{definition}
+\noindent
+Alors, il est possible de former un nouveau ensemble qui a a les unités $1, -1, i$ et $\scalaire{\alpha} \in \R$
+\begin{definition}
+    L'ensemble qui a a les unités $1, -1, i$ et $\scalaire{\alpha} \in \R$ est appellé nombre complexes et est noté $\C$
+\end{definition}
 
+\subsection{Représentation des nombres complexes}
+\noindent
+Soit $x, y, r, \theta \in \R$ et $z \in \C$. Il a trois façons principales de représenter $z$
+\begin{enumerate}[\bfseries 1)]
+    \item \underline{Forme algégrique (cartésienne)}: $z = x + iy$
+    \item \underline{Forme polaire}: $z = r(\cos(\theta)+i\sin(\theta))$
+    \item \underline{Forme exponentielle}: $z = re^{i\theta}$
+\end{enumerate}
 
-\subsection*{Changement de forme}
-\begin{itemize}
-    \item[] Soit $z = x + iy = r(\cos(\theta)+i\sin(\theta)) = re^{i\theta}$
-    \item[] Alors on a,
-    \begin{align*}
-    % The &= is to align by the equal sign
-    r &= |z| = \sqrt{x^2 + y^2} \\
-    \theta &= Arg(z) =
-    \begin{cases} 
-        \arctan(\frac{y}{x}) & x > 0 \\
-        \arctan(\frac{y}{x}) - \pi & x < 0 \\
-        \pm\frac{\pi}{2} & x = 0, \textit{même signe que y}
+\subsection{Changement de forme: Algèbrique à polaire/exponentielle}
+\noindent
+Soit $z = x + iy = r(\cos(\theta)+i\sin(\theta)) = re^{i\theta}$ 
+\begin{definition}
+    On appelle $r$ le module de $z$ noté $|z|$ avec $r = |z| = \sqrt{x^2 + y^2}$
+\end{definition}
+\begin{definition}
+On appelle $\theta$ l'argument de $z$ noté $\text{Arg}(z)$ avec \[\theta = Arg(z) =
+    \begin{cases}
+        \arctan(\frac{y}{x})       & x > 0                            \\
+        \arctan(\frac{y}{x}) - \pi & x < 0                            \\
+        \text{sign}(y)\frac{\pi}{2}           & x = 0, \ \text{sign}(y) \ \text{est la signe de y}
+    \end{cases}\]
+\end{definition}
+\begin{remark}
+    L'argument non unique de $z$ est $\arg(z) = \text{Arg}(z) + 2\pi k, \ k \in \Z$
+\end{remark}
+
+\subsection{Opérations propres aux nombres complexes}
+\noindent
+Soit $z \in \C, \ x, y \in \R, \ \text{t.q.} \ z = x + iy$ 
+\begin{definition}
+    Les parties réel et imaginaire de $z$ sont $\Real{z} = x \in \R$ et $\Ima{z} = y \in \R$
+\end{definition}
+\begin{definition}
+    Le conjugée de $z$ est $z^* = \bar{z} = x - iy = \Real{z} - i\Ima{z}$
+\end{definition}
+
+\subsubsection{Propriétés des opérations}
+\noindent
+Le conjugée et le module sont distributif sur l'addition, la multiplication et la division
+\[
+    \begin{matrix}
+        \left(z_1 + z_2\right)^* = z_1^* + z_2^* & \left(z_1z_2\right)^* = z_1^{*} z_2^* & \left( \frac{z_1}{z_2}\right)^{*} = \frac{z_1^*}{z_2^*} \\[0.5em]
+        \left|z_1 + z_2\right| = |z_1| + |z_2|   & \left|z_1z_2\right| = |z_1||z_2|      & \left| \frac{z_1}{z_2}\right| = \frac{|z_1|}{|z_2|}
+    \end{matrix}
+\]
+Le conjugée de $z^*$ est $z$, soit $\left(z^*\right)^* = z$ \\
+Le conjugée $z$ et le module de $z$ est relié par $zz^* = |z|^2$ \\
+L'argument de $z$ à des propriétés semblabes aux propriétés logarithmiques
+\[
+    \begin{matrix}
+        \arg(z_1z_2) = \arg(z_1) + \arg(z_2) & \arg\left( \frac{z_1}{z_2}\right) = \arg(z_1) - \arg(z_2)
+    \end{matrix}
+\]
+
+\subsection{Racines entières}
+\noindent
+Soit $z = re^{i\theta},\ n \in \N$.
+\[
+    \sqrt[n]{z} = \sqrt[n]{r} \left( e^{i \left( \frac{\theta + 2\pi k}{n} \right) } \right), \ k = 0, \dots, n - 1
+\]
+On peut aussi calculer les racines de $z$ de manières récursives. \\
+Si $w$ est une racine de $z$, alors on a
+\[
+    w_k = \begin{cases}
+        w_{k - 1}e^{ \frac{2\pi i}{n} }                    & k > 0 \\[0.5em]
+        \sqrt[n]{r} \left( e^{i \frac{\theta}{n} } \right) & k = 0
     \end{cases}
-    \end{align*}
-    \item[] où $r$ est le module et $\theta$ est l'argument de $z$ 
-\end{itemize}
+\]
+\begin{remark}
+    Deux racines entières consécutives sont séparées par un angle de $\frac{2\pi}{n}$
+\end{remark}
 
-
-\subsection*{Opérations propres aux nombres complexes}
-\begin{itemize}
-    \item[] Soit $z = x + iy = r(\cos(\theta)+i\sin(\theta)) = re^{i\theta}$
-    \begin{itemize}[itemsep = 0.5em]
-        \item[] Conjugée: $z^{*} = x - iy$
-        \item[] Partie réel: $Re(z) = \frac{z + z^{*}}{2} = x, \quad Re(z) \in \mathbb{R}$
-        \item[] Partie imaginaire: $Im(z) = \frac{z - z^{*}}{2} = y, \quad Im(z) \in \mathbb{R}$
-        \item[] Argument (non-unique): $\arg(z) = Arg(z) + 2\pi k, \quad k \in \mathbb{Z}$
-      \end{itemize}
-\end{itemize}
-
-
-\paragraph*{Propriétés des opérations}
-% This group syntax is to add a bit more space after a linebreak for the properties list
-\begingroup
-\addtolength{\jot}{0.5em}
+\subsection{Exponentielle  et logarithme}
+\noindent
+Soit $z \in \C, \ x, y \in \R, \ \text{t.q.} \ z = x + iy$ \\
+L'exponentielle de $z$ est
+\[
+    e^z = e^{x + iy} = e^x e^{iy} = e^x (cos(y) + isin(y))
+\]
+Le logarithme de $z$ est
 \begin{align*}
-    \left(z_1 + z_2\right)^* &= z_1^* + z_2^* \\
-    \left(z_1z_2\right)^* &= z_1^{*} z_2^* \\
-    \left( \frac{z_1}{z_2}\right)^{*} &= \frac{z_1^*}{z_2^*} \\
-    \left(z^*\right)^* &= z \\
-    zz^{*} &= |z|^2 \\
-    |z_1z_2| &= |z_1||z_2|\\
-    \left| \frac{z_1}{z_2} \right| &= \frac{|z_1|}{|z_2|} \\
-    \left|z_1 + z_2\right| &\leq |z_1| + |z_2| \quad (\textit{Inégalité du triangle}) \\
-    \arg(z_1z_2) &= \arg(z_1) + \arg(z_2) \\
-    \arg\left( \frac{z_1}{z_2}\right) &= \arg(z_1) - \arg(z_2)
+    \ln(z) = \log(z) & = \ln\left(|z|e^{i(\theta + 2\pi k)}\right)      \\
+                     & = \ln|z| + i(\theta + 2\pi k), \ k \in \Z        \\
+                     & = \ln|z| + i(\text{Arg}(z) + 2\pi k), \ k \in \Z \\
+                     & = \ln|z| + i\arg(z)                              \\
 \end{align*}
-\endgroup
 
+\subsection{Puissance Complexe}
+\noindent
+Soit $z \in \C$ et $w \in \C, \ x, y \in \R \ \text{t.q.} \ w = x + iy$ 
+\[
+    z^w = \left( e^{\ln(z)}\right)^{w} = e^{\ln(z)w}
+    = e^{\left(\ln|z| + i\arg(z)\right)\left(x + iy\right)}
+    = |z|^{x} e^{-y\arg(z)} e^{ i \left(x\arg(z) + y\ln|z|\right) }
+\]
+Si $y \neq 0$ alors $z^w$ prend une infinité de valeurs distinctes, puisque $e^{-y\arg(z)} = e^{-y\text{Arg}(z) + 2\pi yk}, \; k \in \Z$ \\
+Si $y = 0 \implies w \in \R$ alors le nombre de valeurs de $z^w$ dépend dans quelle ensemble $x$ est. \\
+Si $x \in \Q$, alors $x = \frac{m}{n}, \ m \in \Z, \ n \in \N \implies \exists \ k \in \Z \ \text{t.q.} \ kx \in \Z \implies z^w$ a $n$ valeurs distinctes \\
+Si $x \in \R \backslash \Q \implies \not \exists \ k \in \Z \ \text{t.q.} \ kx \in \Z \implies z^w$ a une infinité de valeurs distinctes \\
+Dans ce dernier cas, si $z, w \in \R$ alors, par convention, on prend $k = 0$ pour que $z^w \in \R$.
 
-\subsection*{Racines entières}
-\begin{itemize}
-    \item[] Soit $z = re^{i\theta},\ n \in \mathbb{N}$.
-    \item[] Alors on a,
-\end{itemize}
-    \begin{equation*}
-        \sqrt[n]{z} = \sqrt[n]{r} \left( e^{i \left( \frac{\theta + 2\pi k}{n} \right) } \right), \ k = 0, \dots, n - 1
-    \end{equation*} 
-\begin{itemize}
-  \item[] On peut aussi définir les racines de manières récursives.
-  \item[] Si $w$ est une racine de $z$, alors on a
-\end{itemize}
-    \begin{equation*}
-        w_k = \begin{cases} 
-            w_{k - 1}e^{ \frac{2\pi i}{n} } & k > 0 \\[0.5em]
-            \sqrt[n]{r} \left( e^{i \frac{\theta}{n} } \right) & k = 0
-        \end{cases}
-    \end{equation*} 
-\begin{itemize}
-   \item[] On remarque que deux racines entières consécutives sont séparées par un angle de $\frac{2\pi}{n}$    
-\end{itemize}
-
-
-\subsection*{Exponentielle  et logarithme}
-\begin{itemize}
-    \item[] Soit $z = x + iy$. 
-    \item[] Alors on a,
-\end{itemize}
-\begin{equation*}
-    e^z = e^{x + iy} = e^x e^{iy} = e^x (cos(y) + isin(y)) 
-\end{equation*}
-\begin{itemize}
-    \item[] De plus,
-\end{itemize}
-\begin{equation*}
-    \ln(z) = \log(z) = \ln(|z|e^{i(\theta + 2\pi k)}) = \ln|z| + i(\theta + 2\pi k), \quad k \in \mathbb{Z}
-\end{equation*}
-\begin{itemize}
-    \item[] où $(\theta + 2\pi k) = \arg(z)$ 
-    \item[] Donc, $\ln(z) = \ln|z| + i\arg(z)$
-\end{itemize}
-
-
-\subsection*{Puissance Complexe}
-\begin{itemize} 
-    \item[] Soit $z \in \mathbb{C}$ et $w= x + iy$
-    \item[] Alors on a,
-    \item[] \begin{align*}
-        z^w &= \left( e^{\ln(z)}\right)^{w} = e^{\ln(z)w} \\ 
-        &= e^{\left(\ln|z| + i\arg(z)\right)\left(x + iy\right)} \\
-        &= e^{ x\ln|z| - y\arg(z) + i\left( x\arg(z) + y\ln|z|\right) } \\
-        &= e^{x\ln|z| - y\arg(z)}e^{i\left( x\arg(z) + y\ln|z| \right)} \\
-        &= |z|^{x} e^{-y\left( Arg(z) + 2\pi k \right)} e^{ i \left( y\ln|z| + xArg(z) \right) }, \; k \in \mathbb{Z}
-    \end{align*}
-    \item[] Alors $z^w$ prend une infinité de valeur.
-    \item[] Si $z \in \mathbb{R},\; z > 0$ et $w \in \mathbb{Q}'$, l'equation devient $z^w = z^w e^{i 2 \pi k w}$ 
-    \item[] Cette equation a une infinité de valeurs puisque $kw \not\in \mathbb{Z} \implies e^{i 2 \pi k w} \neq 1, \forall z, w$
-    \item[] Dans ce cas la convention est de prendre $k = 0$ pour que $z^w \in \mathbb{R}$
-\end{itemize}   
-
-
-\subsection*{Théorème fondamental de l'algèbre}
-\begin{itemize}
-    \item[] Soit $p(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0, \; a_j \in \mathbb{C}, \; a_n \neq 0, \; n \in \mathbb{N}$
-    \item[] Alors on peut écrire $p(x)$ en terme de ses racines, soit
-    \item[] \begin{equation*}
-        p(x) = a_n(x - x_1)^{k_1} (x - x_2)^{k_2} \dots (x - x_m)^{k_m}
-    \end{equation*}
-    \item[] où $x_1, x_2, \dots ,x_m$ sont les racines de $p(x)$ et $k_j$ est la multiplicité de la racine $x_j$
-    \item[] Le théorème fondamental de l'algèbre nous dit que $k_1 + k_2 + \dots + k_m = n$
-    \item[] On peut donc dire que $p(x)$ à exactement $n$ racines complexes en comptant les multiplicités.
-\end{itemize}
+\subsection{Théorème fondamental de l'algèbre}
+\noindent
+Soit $p(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0, \; a_j \in \C, \; a_n \neq 0, \; n \in N$ \\
+Alors on peut écrire $p(x)$ en terme de ses racines $\{x_1, x_2, \dots ,x_m\}, \; x_j \in \C $, soit
+\[ p(x) = a_n(x - x_1)^{k_1} (x - x_2)^{k_2} \dots (x - x_m)^{k_m} \]
+où $k_j$ est la multiplicité de la racine $x_j$ avec $k_1 + k_2 + \dots + k_m = n$ \\
+Alors $p(x)$ a exactement $n$ racines complexes en comptant les multiplicités.
