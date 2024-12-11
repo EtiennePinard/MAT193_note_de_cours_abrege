@@ -1,6 +1,6 @@
-\section{Chapitre 3: Espace vectorielle de dimension finie}
+\section{Chapitre 3: Espace vectoriel de dimension finie}
 \begin{definition}
-      Un ensemble $V$ est un espace vectorielle sur un corps $F$
+      Un ensemble $V$ est un espace vectoriel sur un corps $F$
       si \begin{enumerate}[1)]
             \item $V$ est fermé sous l'addition c-à-d, $
                         \forall \ (v_1, v_2 \in V), \ v_1 + v_2 \in V
@@ -12,20 +12,17 @@
       Les éléments de $V$ sont appellés \guillemetleft \ vecteurs \guillemetright.
 \end{definition}
 \begin{remark}
-      L'espace vectorielle le plus simple est $V = \{ 0_v \}$, ou $0_v$ est l'élément nulle.
+      L'espace vectoriel le plus simple est $V = \{ 0_v \}$, ou $0_v$ est l'élément nulle.
 \end{remark}
 \begin{definition}
-      Un scalaire $\alpha$ est un élément du corps $F$ associé à l'espace vectorielle.
+      Un scalaire $\alpha$ est un élément du corps $F$ associé à l'espace vectoriel.
 \end{definition}
-\noindent
 Dans notre cas, ce corps est soit les nombres réels $\mathbb{R}$, ou les nombres complexes $\mathbb{C}$.
 
-\subsection{Base d'un espace vectorielle}
-\noindent
-Soit un espace vectorielle $V$ et $\alpha_1, \alpha_2, \ldots, \alpha_n$ des scalaires.
+\subsection{Base d'un espace vectoriel}
+Soit un espace vectoriel $V$ et $\alpha_1, \alpha_2, \ldots, \alpha_n$ des scalaires.
 
 \subsubsection{Combinaison linéaire}
-\noindent
 Soit $v_1, v_2, \ldots, v_n \in V$
 \begin{definition}
       $\alpha_1 v_1 + \alpha_2 v_2 + \ldots + \alpha_n v_n$ est une combinaison linéaire de
@@ -37,9 +34,8 @@ Soit $v_1, v_2, \ldots, v_n \in V$
       Un ensemble $S = \{ u_1, u_2, \ldots, u_n \} \subset V$, est un ensemble générateur si
       \[ \forall v \in V  \ \exists \alpha_1, \ldots, \alpha_n \text{ scalaire t.q. } v = \alpha_1 u_1 + \ldots + \alpha_n u_n\]
 \end{definition}
-\noindent
 Note: Pour prouver qu'un ensemble est un ensemble générateur, il faut habituellement
-prendre un élément général de l'espace vectorielle et exprimer cet élément général
+prendre un élément général de l'espace vectoriel et exprimer cet élément général
 comme une combinaison linéaire des vecteurs dans $S$.
 
 \subsubsection{Indépendance linéaire}
@@ -52,29 +48,28 @@ comme une combinaison linéaire des vecteurs dans $S$.
 \end{definition}
 
 \subsubsection{Déterminer l'indépendance linéaire de \texorpdfstring{$S \subset \R^n$}{S subset of Rn}}
-\noindent
 Soit $S = \{ u_1, u_2, \ldots, u_m \} \subset \R^n$ avec $u_j = \begin{pmatrix}
             u_{1j} & u_{2j} & \dots  & u_{nj} \end{pmatrix}^T, \ u_{kj} \in \R$ et $|S| = m$ \\
 Considérons la matrice $M = \begin{pmatrix} u_1 & u_2 & \ldots & u_m \end{pmatrix}$. \\
 Pour déterminer l'indépendance linéaire de $S$ à partir de $M$, il faut
-échelonner la matrice $M$ ou la matrice $M^T$. En échelonnant $M$ ou $M^T$, on peut arriver 
+échelonner la matrice $M$ ou la matrice $M^T$. En échelonnant $M$ ou $M^T$, on peut arriver
 à deux conclusions, soit \begin{enumerate}[1.]
       \item $\text{rg}(M^T) < m$ ou $\text{rg}(M) < m \implies S$ est lié.
       \item $\text{rg}(M^T) = m$ ou $\text{rg}(M^T) = m \implies S$ est linéairement indépendant.
 \end{enumerate}
-Note: Échelonner $M^T$ donne des résultats plus simple à interpréter puisque 
+Note: Échelonner $M^T$ donne des résultats plus simple à interpréter puisque
 $0 \leq \text{rg}(M^T) \leq m$. Alors si $M^T$ échelonné contient une ligne nulle
 on sait automatiquement que $S$ est lié, ce qui n'est pas le cas si $M$ échelonné
 contient une ligne nulle.
 
-\subsubsection{Base d'un espace vectorielle}
+\subsubsection{Base d'un espace vectoriel}
 \begin{definition}
       Un ensemble $B = \{ u_1, u_2, \ldots, u_n \} \subset V$, est une base de $V$ si
       $B$ est un ensemble générateur de $V$ et $B$ est linéairement indépendant.
 \end{definition}
 \begin{definition}
       La dimension de $V$ est $\dim_F V = |B|$, ou $|B|$ est le nombre d'élément dans la base $B$
-      de $V$ et $F$ est le corps de l'espace vectorielle.
+      de $V$ et $F$ est le corps de l'espace vectoriel.
 \end{definition}
 \begin{theorem}
       Le nombre de vecteur dans une base de $V$ ne dépend pas de la base choisi.
@@ -85,13 +80,12 @@ contient une ligne nulle.
       le même nombre de vecteurs.
 \end{remark}
 \paragraph{Base canonique:}
-Un espace vectorielle a souvent une base canonique, soit une base plus naturel à utiliser.
+Un espace vectoriel a souvent une base canonique, soit une base plus naturel à utiliser.
 Par exemple, la base canonique de $\R^n$ est $S = \{ e_1, e_2, \ldots, e_n \}$.
 On peut donc dire que $\dim_\R \R^n = n$
 
 \subsubsection{Représentation d'un vecteur dans une base}
-\noindent
-Soit $V$ un espace vectorielle avec $\dim_F V = n$, et $B = \{ u_1, u_2, \ldots, u_n \}$ une base de $V$. \\
+Soit $V$ un espace vectoriel avec $\dim_F V = n$, et $B = \{ u_1, u_2, \ldots, u_n \}$ une base de $V$. \\
 Cela veut dire que $ \forall \ v \in V  \ \exists \ \alpha_1, \ldots, \alpha_n \text{ scalaire t.q. } v = \alpha_1 u_1 + \ldots + \alpha_n u_n$
 \begin{definition}
       Les scalaires $\alpha_1, \ldots, \alpha_n$ sont appellés les coordonnées de $v$ dans la base $B$.
@@ -108,14 +102,205 @@ Cela veut dire que $ \forall \ v \in V  \ \exists \ \alpha_1, \ldots, \alpha_n \
       \]
 \end{definition}
 
-\subsubsection{Propriétés d'une base d'un espace vectorielle}
+\subsubsection{Propriétés d'une base d'un espace vectoriel}
 \begin{enumerate}[a)]
       \item Soit $v_1, v_2 \in V$, alors $v_1 = v_2 \iff [v_1]_B = [v_2]_B$
-      \item Soit $S = \{ u_1, u_2, \ldots, u_n \} \subset V$ \\
-            Si $S^\prime = \{ [u_1]_B, [u_2]_B, \ldots, [u_n]_B \}$ est linéairement indépendant alors $S$ l'est aussi
       \item La représentation dans une base est linaire, ce qui veut dire qu'elle satisfait ces deux propriétés:
             \begin{enumerate}[1.]
                   \item $[v_1 + v_2]_B = [v_1]_B + [v_2]_B$
                   \item $[\alpha v]_B = \alpha [v]_B$
             \end{enumerate}
+      \item Soit $S = \{ u_1, u_2, \ldots, u_n \} \subset V$ \\
+            Si $S^\prime = \{ [u_1]_B, [u_2]_B, \ldots, [u_n]_B \}$ est linéairement indépendant alors $S$ l'est aussi
 \end{enumerate}
+
+\subsection{Matrice de changement de base}
+
+Soit $V$ un espace vectoriel avec $\dim_F V = n$ \\
+Soit $B = \left\{ u_1, u_2, \dots, u_n \right\}$ et $B^\prime = \left\{ u_1^\prime, u_2^\prime, \dots, u_n^\prime \right\}$ deux bases de $V$ 
+\begin{definition}
+      La matrice de changement (ou de passage) de la base $B^\prime$ à $B$ est noté
+      $P^{B^\prime}_B$ et est donné par $P^{B^\prime}_B = \begin{bmatrix}
+           [ u_1^\prime]_B & [u_2^\prime]_B & \dots & [u_n^\prime]_B
+      \end{bmatrix}$. Les bases sont liées par la matrice de passage par l'équation 
+      \[P^{B^\prime}_B [v]_{B^\prime} = [v]_B\]
+\end{definition}
+Note: Il a plusieurs notation pour la matrice de passage. La notation utilisée
+dans cette définition est équivalente à $\underset{B^\prime \to B}{P}$
+\begin{lemma}
+      La matrice de passage de $B$ à $B^\prime$ est l'inverse de la matrice de passage de 
+      $B^\prime$ à $B$, soit \[P^B_{B^\prime} = \left(P^{B^\prime}_B\right)^{-1}\]
+\end{lemma}
+\begin{lemma}
+      La matrice de passage est unique.
+\end{lemma}
+
+\subsection{L'indépendance linéaire des functions}
+Soit $V$ l'espace vectoriel de toutes les fonctions $f: \R \to \R$ avec des scalaire réels \\
+La dimensions de $V$ est infinie et il n'y a pas de bases dans $V$ \\
+Soit ${v_1, v_2, \dots, v_n} \subset V$ et $S = \text{span}\{v_1, v_2, \dots, v_n\}$. \\
+Pour déterminer l'indépendance linéaire de $S$, considérons $F(x) = \alpha_1 v_1 + \alpha_2 v_2 + \dots + \alpha_n v_n$ \\
+Supposons que $S$ est linéairement indépendant, c-à-d que $F(x) = 0 \ \forall \ x \in \R$ \\
+Il faut ensuite prendre $x_1, x_2, \dots, x_n$ valeurs et évaluer $F(x_1), F(x_2), \dots, F(x_n)$. \\
+Le résultats va être $n$ équations de la forme $\alpha_1 v_1(x_j)+ \alpha_2 v_2(x_j)+ \dots + \alpha_n v_n(x_j) = 0$ \\
+\underline{Important:} Pour que la méthode fonctionne, il faut que les $n$ équations soit uniques. 
+En d'autres termes, si $F(a) = F(b)$ alors $a$ et $b$ ne peuvent pas les deux faire parties des $n$ valeurs choisis. \\
+Maintenant, il faut résoudre le système homogène $\begin{cases}
+      \alpha_1 v_1(x_1)+ \alpha_2 v_2(x_1)+ \dots + \alpha_n v_n(x_1) = 0 \\
+      \alpha_1 v_1(x_2)+ \alpha_2 v_2(x_2)+ \dots + \alpha_n v_n(x_2) = 0 \\
+      \vdots \\
+      \alpha_1 v_1(x_n)+ \alpha_2 v_2(x_n)+ \dots + \alpha_n v_n(x_n) = 0 \\
+\end{cases}$ \\
+La résolution du système va aboutir à deux possibilitées: \begin{enumerate}
+      \item Le système homogène à seulement la solution nulle $\implies S$ est linéairement indépendant
+      \item Le système homogène à seulement une infinité de solution. Dans ce cas, on doit construire
+      une nouvelle fonction $\hat{F}(x) = \beta_1 v_1 + \beta_2 v_2 + \dots + \beta_n v_n$ ou $\beta_1, \beta_2, \dots, \beta_n$
+      est une solution non-nulle du système. Il faut alors démontrer que $\hat{F}(x) = 0 \ \forall \ x \in \R$. 
+      Si c'est le cas, alors on peut conclure que $S$ est lié.
+\end{enumerate}
+
+\subsection{Espaces vectoriels munis d'un produit scalaire}
+
+\subsubsection{Produit scalaire réel}
+Soit $V$ un espace vectoriel réel
+\begin{definition}
+      \label{scpr_Real}
+      Un produit scalaire dans $V$ est une application $\myfunc{\scpr{\cdot}{\cdot}}{V \times V}{\R}{u, v \in V}{\scpr{u}{v}}$, t.q.
+      \begin{align*}
+            &1. \quad \scpr{u}{v} = \scpr{v}{u}& &2. \quad \scpr{u}{v + \alpha w} = \scpr{u}{v} + \alpha \scpr{u}{w}& &3. \quad \scpr{u}{u} \geq 0 \ \text{et} \ \scpr{u}{u} = 0 \iff u = 0&
+      \end{align*}
+\end{definition}
+\begin{remark}
+      Le produit scalaire réel n'est pas unique. 
+\end{remark}
+\begin{definition}
+      Une matrice $A \in M_{n \times n}(\R)$ est définie positif si $x^T A x > 0 \ \forall \ x \neq 0, \ x \in R^n$
+\end{definition}
+\begin{lemma}
+      Soit $x,y \in \R^n$ et $A \in M_{n \times n}(\R)$ symétrique et définie positif, alors tout produit scalaire dans $\R^n$ 
+      peut être écris comme tel, $\scpr{x}{y} = x^T A y$. On note ce produit scalaire modifié $\scpr{u}{v}_A$
+\end{lemma}
+\begin{definition}
+      Le cas ou $A = I \implies \scpr{x}{y} = x^T I y = x^T y$ est appellé le produit scalaire 
+      canonique (ou euclédien) dans $\R^n$
+\end{definition}
+
+\subsubsection{Produit scalaire complexe}
+Soit $V$ un espace vectoriel complexe. Le produit scalaire complexe est défini de manière
+similaire au produit scalaire réel [\ref{scpr_Real}] à l'exception d'une restriction de plus.
+\begin{definition}
+      Un produit scalaire dans $V$ est une application $\myfunc{\scpr{\cdot}{\cdot}}{V \times V}{\C}{u, v \in V}{\scpr{u}{v}}$, t.q.
+      \begin{align*}
+            &1. \quad \scpr{u}{v} = \scpr{v}{u}^*& &2. \quad \scpr{u}{v + \alpha w} = \scpr{u}{v} + \alpha \scpr{u}{w}& &3. \quad \scpr{u}{u} \geq 0 \ \text{et} \ \scpr{u}{u} = 0 \iff u = 0&
+      \end{align*}
+\end{definition}
+\begin{remark}
+      La définition implique que $\scpr{\alpha v + \beta u}{w} = \alpha^* \scpr{v}{w} + \beta^* \scpr{u}{w}$
+\end{remark}
+\begin{lemma}
+      Soit $x,y \in \C^n$ et $A \in M_{n \times n}(\C)$ hermitienne et définie positif, alors tout produit scalaire dans $\C^n$ 
+      peut être écris comme tel, $\scpr{x}{y}_A = x^\dagger A y$.
+\end{lemma}
+\begin{definition}
+      Le produit scalaire canonique dans $\C^n$ est $\scpr{x}{y} = x^\dagger y$
+\end{definition}
+
+\subsubsection{Orthogonalité entre deux vecteurs}
+Soit $V$ un espace vectoriel muni d'un produit scalaire
+\begin{definition}
+      $x, y \in V$ sont orthogonales $\iff \scpr{x}{y} = 0$. Alors on note $x \perp y$.
+\end{definition}
+\begin{remark}
+      L'orthogonalité entre deux vecteurs est toujours par rapport au produit scalaire utilisé
+\end{remark}
+
+\subsubsection{Norme d'un vecteur}
+Soit $V$ un espace vectoriel muni d'un produit scalaire
+\begin{definition}
+      La norme de $x \in V$ par rapport au produit scalaire dans $V$ est $\norm{x} = \sqrt{\scpr{x}{x}}$
+\end{definition}
+\begin{remark}
+      La norme d'un vecteur change par rapport au produit scalaire utilisé
+\end{remark}
+\begin{definition}
+      Un vecteur de norme 1 est dit un vecteur unitaire.
+\end{definition}
+\begin{lemma}
+      Tout vecteur $x$ peut être transformé en vecteur unitaire avec la formule $\hat{x} = \frac{x}{\norm{x}}$
+\end{lemma}
+
+\subsubsection{Distance entre deux vecteurs}
+Soit $V$ un espace vectoriel muni d'un produit scalaire
+\begin{definition}
+      La distance entre $x, y \in V$ est $\text{dist}(x, y) = \norm{x - y}$
+\end{definition}
+\begin{remark}
+      Encore une fois, la distance entre deux vecteurs change par rapport au produit scalaire utilisé
+\end{remark}
+
+\subsubsection{Inégalité du produit scalaire}
+Soit $V$ un espace vectoriel muni d'un produit scalaire, $u, u \in V$
+\begin{theorem}
+      L'inégalité de Cauchy-Schwarz est $\left|\scpr{u}{v}\right| \leq \norm{u}\norm{v}$
+\end{theorem}
+\begin{theorem}
+      L'inégalité du triangle est $\norm{u + v} \leq \norm{u} + \norm{v}$
+\end{theorem}
+
+\subsection{Base orthonormales}
+Soit $V$ un espace vectoriel muni d'un produit scalaire, $\dim V = n$ \\
+Soit $S = \{u_1, u_2, \dots, u_m\} \subset V$
+\begin{definition}
+      $S$ orthonormale $\iff$
+      $u_{k_1} \perp u_{k_2} \ \forall \ k_1 \neq k_2$ et $\norm{u_k} = 1 \ \forall \ k = 1, 2, \dots, m$ 
+\end{definition}
+\begin{definition}
+      Le delta de Kronecker est $\delta_{kj} = \begin{cases}
+            0 & \text{si} \ k \neq j \\
+            1 & \text{si} \ k = j \\
+      \end{cases}$
+\end{definition}
+\begin{remark}
+      Le delta de Kronecker pour $i, j \in \{0, 1, \dots, n\}$ est la matrice identité $n \times n$.
+      De plus, on peut utiliser le delta de Kronecker pour simplifier la définition d'un ensemble orthonormé.
+\end{remark}
+\begin{definition}
+      $S$ orthonormale $\iff \scpr{u_k}{u_j} = \delta_{kj} \ \forall \ u_k, u_j \in S$ 
+\end{definition}
+\begin{definition}
+      $B$ est une base orthonormale (ou orthonormé) dans $V$ si $B$ est une base dans $V$ et 
+      $B$ est un ensemble orthonormale.
+\end{definition}
+Soit $B$ une base orthonormale de $V$. Notons le produit scalaire dans $V$ comme $\scpr{\cdot}{\cdot}_V$
+\begin{theorem}
+      Pour $x, y \in V$, on a $\scpr{x}{y}_V = [x]_B^\dagger [y]_B = \scpr{[x]_B}{[y]_B}_{\C^n}$
+\end{theorem}
+\begin{remark}
+      Il est possible de traduire tout produit scalaire dans $V$ au produit scalaire canonique de
+      $\C^n$ à l'aide d'une base orthonormale de $V$.
+\end{remark}
+
+\subsection{Projection orthogonal}
+Soit $R = \{u_1, u_2, \dots, u_m\} \subset V$ un ensemble orthonormale avec $\dim V = n > m$ \\
+Considérons le sous-espace $W = \text{span}\{R\} \subset V$ qui a $R$ comme base orthonormale
+\begin{definition}
+      Soit $v \in V$, alors $S_W(v) = \sum\limits_{k = 1}^{m}\scpr{u_k}{v}{u_k}$
+\end{definition}
+\begin{theorem}
+      Le vecteur $S_W(v) \in W$ et $S_W(v) \perp w$ $\forall \ v \in V, \ w \in W$
+\end{theorem}
+
+\subsection{Orthonormalisation de Gram-Schmidt}
+Soit $W = \{w_1, w_2, \dots, w_m\}$ un ensemble linéairement indépendant. L'orthonormalisation 
+de Gram-Schmidt va produire un ensemble orthonormale $S = \{u_1, u_2, \dots, u_m\}$ à partir
+des vecteurs de $W$. 
+\begin{align*}
+      &\text{Étape} \ 1. \quad \text{Posons} \ u_1 = \frac{w_1}{\norm{w_1}}& &\text{Alors} \ u_1 \ \text{est unitaire} \\
+      &\text{Étape} \ 2. \quad \text{Posons} \ v_2 = w_2 - S_{<u_1>}(w_2)& &\text{Alors} \ v_2 \perp u_1 \\
+      &\text{Étape} \ 3. \quad \text{Posons} \ u_2 = \frac{v_2}{\norm{v_2}}& &\text{Alors} \ u_2 \ \text{est unitaire et} \ u_2 \perp u_1 \\
+      \vdots \\
+      &\text{Étape} \ 2m - 2. \quad \text{Posons} \ v_{m} = w_{m} - S_{<u_1, \dots, u_{m - 1}>}(w_{m})& &\text{Alors} \ v_{m} \perp \{u_1, \dots, u_{m - 1}\} \\
+      &\text{Étape} \ 2m - 1. \quad \text{Posons} \ u_{m} = \frac{v_{m}}{\norm{v_{m}}} & &\text{Alors} \ u_{m} \ \text{est unitaire et} \ u_{m} \perp \{u_1, \dots, u_{m - 1}\}
+\end{align*}
+Le procédé va se terminer quand toutes les $2m - 1$ étapes seront faites. \\
+Note: La notation $<u_1, \dots, u_j>$ est une façons plus courte d'écrire $\text{span}\{u_1, \dots, u_j\}$

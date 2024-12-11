@@ -1,7 +1,6 @@
 \section{Chapitre 2: Matrices}
 
 \subsection{Définition d'une matrice}
-\noindent
 \begin{definition}
     L'ensemble des matrices de type $m \times n$ sur un corps $F$ est noté $M_{m \times n}(F)$ \\
     Si $F$ est un corps quelconque alors $M_{m \times n}(F) = M_{m \times n}$
@@ -31,7 +30,6 @@
             0 & \text{si} \ i \neq j
         \end{cases}$
 \end{definition}
-\noindent
 Soit $A \in M_n(F)$ et $a_{kj} \in F$ avec $k, j \in \{0, 1, \dots, n\}$
 \begin{definition}
     $A$ est triangulaire supérieur si $(A)_{kj} = \begin{cases}
@@ -62,19 +60,16 @@ Soit $A \in M_n(F)$ et $a_{kj} \in F$ avec $k, j \in \{0, 1, \dots, n\}$
 \subsection{Opérations matricielles}
 
 \subsubsection{Addition de matrices}
-\noindent
 L'addition de deux matrices $A$ et $B$ existe seulement si $A$ et $B$ sont du même type.
 L'addition est commutatif, associatif, possède un élément neutre et possède un inverse.
 \[ (AB)_{kj} = a_{kj} + b_{kj} \]
 
 \subsubsection{Multiplication par un scalaire}
-\noindent
 La multiplication par un scalaire $\alpha$ existe pour une matrice $A$ de n'importe quel type. La multiplication
 par un scalaire est associatif, distributif, commutatif et possède un inverse si $\alpha \neq 0$.
 \[ (\alpha A)_{kj} = \alpha a_{kj}\]
 
 \subsubsection{Produit matricielle}
-\noindent
 Soit $A \in M_{m \times n}$ et $B \in M_{r \times t}$. Alors
 le produit matricielle $AB$ existe si $n = r$. Dans ce cas, on a \[
     (AB)_{kj} = \sum_{s = 1}^{n} a_{ks} b_{sj}
@@ -85,7 +80,6 @@ le produit matricielle $AB$ existe si $n = r$. Dans ce cas, on a \[
 \end{remark}
 
 \subsubsection{Propriétés du produit matricielle}
-\noindent
 Soit $A, B, C$ des matrices dont le produit matricielle entre eux existe. \\
 Le produit matricielle est associatif, distributif et possède un élément neutre, soit $I$. \\
 \underline{Important}: Le produit matricielle n'est, généralement, \underline{pas commutatif}
@@ -113,7 +107,6 @@ Le produit matricielle est associatif, distributif et possède un élément neut
 \end{definition}
 
 \subsubsection{Propriétés transposé et conjugué hermitien}
-\noindent
 Soit $A, B \in M_n$, $\scalaire{\alpha}$. Alors on a
 \[
     \begin{matrix}
@@ -141,7 +134,6 @@ Soit $A, B \in M_n$, $\scalaire{\alpha}$. Alors on a
 \end{remark}
 
 \subsubsection{Commutateur de matrice}
-\noindent
 Soit $A, B \in M_n(\mathbb{C})$, alors le commutateur de $A$ et $B$ est la matrice
 \[ \left[ A, B \right] = AB - BA \]
 
@@ -155,7 +147,6 @@ Soit $A, B \in M_n(\mathbb{C})$, alors le commutateur de $A$ et $B$ est la matri
 \end{enumerate}
 
 \subsubsection{Trace d'une matrice}
-\noindent
 Soit $A = (a_{ij})_{n \times n}$. Alors la trace de $A$ est
 \[ \text{tr} A =  \sum_{j = 0}^{n} a_{jj} \]
 
@@ -180,7 +171,6 @@ Soit $A = (a_{ij})_{n \times n}$. Alors la trace de $A$ est
         \end{cases}
     \]
 \end{definition}
-\noindent
 Ceci est l'expansion par la kème ligne, $1 \leq k \leq n$. Le terme $m_{kj}$
 est le déterminant de la sous-matrice $M_{kj}$ qu'on obtient si on biffe la ligne $k$ et la
 colonne $j$, alors $m_{ji} = \det M_{ji}$. \\
@@ -202,7 +192,6 @@ Dans la première équation, le déterminant des sous-matrices était multiplié
         \det A = \sum_{\sigma \in S_n} \text{sign}(\sigma) \prod_{i = 1}^{n}a_{j \sigma_j}
     \end{equation*}
 \end{definition}
-\noindent
 Ici $\sigma = \begin{pmatrix}
         \sigma_1 & \sigma_2 & \dots & \sigma_n
     \end{pmatrix}$ et représente une permutation de l'ensemble $\{1, \ 2, \dots, \ n  \}$. \\
@@ -212,7 +201,6 @@ $\text{sign}(\sigma)$ est la signature de $\sigma$ et est égale à $(-1)^{\text
 Le désorde de $\sigma$ est le nombre de couple $(\sigma_j, \sigma_k)$ ou $j < k$ mais $\sigma_j > \sigma_k$.
 
 \subsubsection{Propriétés du déterminant}
-\noindent
 Soit $A, B \in M_n(\mathbb{C}), \ \alpha \in \mathbb{C}$ \begin{enumerate}
     \item $\det A^T = \det A$
     \item $\det(\alpha A) = \alpha^n \det(A)$
@@ -277,7 +265,6 @@ Par contre, pour être concis, ils sont seulement exprimés en termes des colonn
     Alors $B$ est noté $A^{-1}$ et est appellé la matrice inverse de $A$
 \end{definition}
 \subsubsection{Propriétés de l'inverse}
-\noindent
 Soit $A \in M_{n \times n}(\C)$ inversible \begin{enumerate}
     \item $AB = \mathbb{O} \implies B = \mathbb{O}$
     \item Si $AC = BA = I \implies B = BI = B(AC) = (BA)C = IC = C $, l'inverse à gauche et à droite sont égaux
@@ -286,7 +273,7 @@ Soit $A \in M_{n \times n}(\C)$ inversible \begin{enumerate}
 \end{enumerate}
 
 \subsubsection{Calculer la matrice inverse}
-\noindent
+
 Soit $A \in M_{n \times n}(\C)$, alors
 \[ A^{-1} = \frac{1}{\det A} \ \text{adj}(A) \]
 $\text{adj}(A)$ est la matrice adjointe de $A$ et est définie comme
@@ -302,7 +289,6 @@ Cette manière de calculer la matrice inverse nous permet de formuler ce théor�
 \end{theorem}
 
 \subsection{Systèmes d'équations linéaires}
-\noindent
 \begin{definition}
     Chaque système d'équation linéaire peut-être représenter par une equation matricielle, soit
     \[
@@ -332,7 +318,6 @@ Cette manière de calculer la matrice inverse nous permet de formuler ce théor�
 \end{definition}
 
 \subsubsection{Forme échelonné d'un système}
-\noindent
 Une matrice est de la forme échelonné si \begin{enumerate}
     \item La ligne qui précède une ligne non-nulle est non-nulle
     \item Le premier coefficient non-nul d'une ligne non-nulle, appellé le pivot, est plus à
@@ -366,12 +351,10 @@ soit exactement $n - \text{rg}(A)$ variables libres.
 \end{remark}
 
 \subsubsection{Calculer l'inverse d'une matrice}
-\noindent
 Il est possible de calculer l'inverse de $A$ en échelonnant le système $(A|I)$. Le
 système échelonné va donner $(A|I) \sim (I|B)$, avec $B = A^{-1}$.
 
 \subsubsection{Système homogène}
-\noindent
 Un système homogène est un système de la forme $AX = \mathbb{O}$. Un tel système
 est toujours compatible avec la solution trivial $X = \mathbb{O}$. De plus, si $A$ est inversible
 le système homogène à seulement la solution trivial, sinon il a une infinité de
@@ -379,10 +362,8 @@ solution, puisque c'est impossible que $\text{rg}(A) < \text{rg}(A|\mathbb{O})$,
 et donc que le système soit incompatible.
 
 \subsubsection{Noyau d'un système}
-\noindent
-Soit $A \in M_{m \times n}$
 \begin{definition}
-    Le noyau de $A$, noté $\text{N}(A)$, est l'ensemble de tous les solutions du système homogène
+    Le noyau de $A \in M_{m \times n}$, noté $\text{N}(A)$, est l'ensemble de tous les solutions du système homogène
     $AX = \mathbb{O}$, soit 
     \[ \text{N}(A) = \left\{ X \in M_{n \times 1} \ | \ AX = \mathbb{O}  \right\} \]
 \end{definition}

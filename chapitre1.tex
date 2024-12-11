@@ -1,28 +1,24 @@
 \section{Chapitre 1: Nombres Complexes}
 
 \subsection{Définition des nombres complexes}
-\noindent
 Rappel: les unités de $\R$ sont $1$ et $-1$ 
 \begin{definition}
     $i$ est l'unité imaginaire telle que $i^2 = -1$ 
 \end{definition}
-\noindent
 Alors, il est possible de former un nouveau ensemble qui a a les unités $1, -1, i$ et $\scalaire{\alpha} \in \R$
 \begin{definition}
     L'ensemble qui a a les unités $1, -1, i$ et $\scalaire{\alpha} \in \R$ est appellé nombre complexes et est noté $\C$
 \end{definition}
 
 \subsection{Représentation des nombres complexes}
-\noindent
 Soit $x, y, r, \theta \in \R$ et $z \in \C$. Il a trois façons principales de représenter $z$
-\begin{enumerate}[\bfseries 1)]
+\begin{enumerate}
     \item \underline{Forme algégrique (cartésienne)}: $z = x + iy$
     \item \underline{Forme polaire}: $z = r(\cos(\theta)+i\sin(\theta))$
     \item \underline{Forme exponentielle}: $z = re^{i\theta}$
 \end{enumerate}
 
 \subsection{Changement de forme: Algèbrique à polaire/exponentielle}
-\noindent
 Soit $z = x + iy = r(\cos(\theta)+i\sin(\theta)) = re^{i\theta}$ 
 \begin{definition}
     On appelle $r$ le module de $z$ noté $|z|$ avec $r = |z| = \sqrt{x^2 + y^2}$
@@ -40,7 +36,6 @@ On appelle $\theta$ l'argument de $z$ noté $\text{Arg}(z)$ avec \[\theta = Arg(
 \end{remark}
 
 \subsection{Opérations propres aux nombres complexes}
-\noindent
 Soit $z \in \C, \ x, y \in \R, \ \text{t.q.} \ z = x + iy$ 
 \begin{definition}
     Les parties réel et imaginaire de $z$ sont $\Real{z} = x \in \R$ et $\Ima{z} = y \in \R$
@@ -50,7 +45,6 @@ Soit $z \in \C, \ x, y \in \R, \ \text{t.q.} \ z = x + iy$
 \end{definition}
 
 \subsubsection{Propriétés des opérations}
-\noindent
 Le conjugée et le module sont distributif sur l'addition, la multiplication et la division
 \[
     \begin{matrix}
@@ -68,7 +62,6 @@ L'argument de $z$ à des propriétés semblabes aux propriétés logarithmiques
 \]
 
 \subsection{Racines entières}
-\noindent
 Soit $z = re^{i\theta},\ n \in \N$.
 \[
     \sqrt[n]{z} = \sqrt[n]{r} \left( e^{i \left( \frac{\theta + 2\pi k}{n} \right) } \right), \ k = 0, \dots, n - 1
@@ -86,7 +79,6 @@ Si $w$ est une racine de $z$, alors on a
 \end{remark}
 
 \subsection{Exponentielle  et logarithme}
-\noindent
 Soit $z \in \C, \ x, y \in \R, \ \text{t.q.} \ z = x + iy$ \\
 L'exponentielle de $z$ est
 \[
@@ -101,7 +93,6 @@ Le logarithme de $z$ est
 \end{align*}
 
 \subsection{Puissance Complexe}
-\noindent
 Soit $z \in \C$ et $w \in \C, \ x, y \in \R \ \text{t.q.} \ w = x + iy$ 
 \[
     z^w = \left( e^{\ln(z)}\right)^{w} = e^{\ln(z)w}
@@ -115,7 +106,6 @@ Si $x \in \R \backslash \Q \implies \not \exists \ k \in \Z \ \text{t.q.} \ kx \
 Dans ce dernier cas, si $z, w \in \R$ alors, par convention, on prend $k = 0$ pour que $z^w \in \R$.
 
 \subsection{Théorème fondamental de l'algèbre}
-\noindent
 Soit $p(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0, \; a_j \in \C, \; a_n \neq 0, \; n \in N$ \\
 Alors on peut écrire $p(x)$ en terme de ses racines $\{x_1, x_2, \dots ,x_m\}, \; x_j \in \C $, soit
 \[ p(x) = a_n(x - x_1)^{k_1} (x - x_2)^{k_2} \dots (x - x_m)^{k_m} \]
