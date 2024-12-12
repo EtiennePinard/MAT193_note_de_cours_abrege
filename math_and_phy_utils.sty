@@ -1,0 +1,87 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{math_and_phy_utils}[2024/12/04 Some utilities for math and physics papers]
+\RequirePackage{amsmath, amsthm, amsfonts, mathtools, array}
+
+% From https://tex.stackexchange.com/a/20691
+% Does the same thing that \providecommand does but for environments
+\makeatletter
+\def\provideenvironment{\@star@or@long\provide@environment}
+\def\provide@environment#1{%
+        \@ifundefined{#1}%
+                {\def\reserved@a{\newenvironment{#1}}}%
+                {\def\reserved@a{\renewenvironment{dummy@environ}}}%
+        \reserved@a
+}
+\def\dummy@environ{}
+\makeatother
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\providecommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\providecommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\providecommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\providecommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\providecommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\providecommand{\E}{\mathrm{E}}
+\providecommand{\Var}{\mathrm{Var}}
+\providecommand{\Cov}{\mathrm{Cov}}
+\providecommand{\Bias}{\mathrm{Bias}}
+
+% Sets
+\providecommand{\N}{\mathbb{N}}
+\providecommand{\Z}{\mathbb{Z}}
+\providecommand{\Q}{\mathbb{Q}}
+\providecommand{\R}{\mathbb{R}}
+\providecommand{\C}{\mathbb{C}}
+
+\providecommand{\Real}[1]{\text{Re}(#1)}
+\providecommand{\Ima}[1]{\text{Im}(#1)}
+
+% Linear Algebra
+% scpr: scalar product
+\providecommand{\emptyscpr}{\langle \cdot \lvert \cdot \rangle}
+\providecommand{\scpr}[2]{\langle #1 \lvert #2 \rangle}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+\providecommand{\scalaire}[1]{#1 \text{ scalaire}}
+\providecommand{\ihat}{\hat{\imath}}
+\providecommand{\jhat}{\hat{\jmath}}
+\providecommand{\khat}{\hat{k}}
+
+\provideenvironment{psmallmatrix}
+  {\left(\begin{smallmatrix}}
+  {\end{smallmatrix}\right)}
+
+% Functional notation
+% From https://tex.stackexchange.com/a/290255
+\providecommand\myfunc[5]{%
+  \begingroup
+  \setlength\arraycolsep{0pt}
+  #1\colon\begin{array}[t]{c >{{}}c<{{}} c}
+             #2 & \to & #3 \\ #4 & \mapsto & #5 
+          \end{array}%
+  \endgroup}
+
+\provideenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{} *{\numexpr#1-1}{c} | c @{}}
+}{%
+  \end{array}\right)
+}
+
+% Dirac Notation
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1\,\delimsize\vert\,\mathopen{}#2}
+\providecommand{\ketbra}[2]{\ket{#1}\bra{#2}}
