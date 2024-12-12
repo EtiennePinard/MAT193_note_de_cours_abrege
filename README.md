@@ -1,4 +1,4 @@
-# Résumé du cours d'Algèbre Linéaire (MAT-193) 
+# Note de cours abrégé du cours d'Algèbre Linéaire (MAT193) dans la session d'automne 2024
 
 ## Comment compiler le document latex en pdf
 1. Avoir latex d'installer (https://www.latex-project.org/get/)
