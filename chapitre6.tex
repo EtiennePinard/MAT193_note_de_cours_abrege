@@ -1,0 +1,71 @@
+\section{Chapitre 6: Opérateurs linéaires}
+\begin{definition}
+    Un opérateur $T$ est une application $T\colon V \to W$ avec $V$ et $W$ des espaces vectoriels
+\end{definition}
+\begin{definition}
+    Un opérateur $T$ est linéaire $\iff T(\alpha u + \beta v) = \alpha T(u) + \beta T(v) \ \forall \ u, v \in V, \ \alpha, \scalaire{\beta}$ 
+\end{definition}
+\begin{definition}
+    Soit $T_1 \colon V \to W$ et $T_2 \colon W \to U$. La composition de $T_1$ et $T_2$ est noté
+    $T_2 T_1$ et l'évaluation est $T_2 T_1 (v) = T_2(T_1(v))$ avec $T_1 T_2 \colon V \to U$
+\end{definition}
+\begin{remark}
+    La composition de deux opérateurs n'est généralement pas commutatif, mais est associatif
+\end{remark}
+\begin{definition}
+    Soit $T_1, T_2 \colon V \to V$. Le commutateur de $T_1$ et $T_2$ est 
+    $[T_1, T_2] = T_1T_2 - T_2T_1$ avec $[T_1, T_2](v) = T_1T_2v - T_2T_1v$
+\end{definition}
+
+\subsection{La matrice d'un opérateurs linéaires}
+\begin{theorem}
+    Soit $V, W$ deux espaces vectoriels avec $\dim_\C V = n$ et $\dim_\C W = m$ \\
+    Soit $B_V, B_W$ deux bases respectives de $V$ et $W$, alors 
+    \[
+    T\colon V \to W \ \text{est linéaire} \iff \exists \ M \in M_{m \times n}(\C) \ \text{t.q.} \ 
+    \forall \ v \in V \ M[v]_{B_V} = [Tv]_{B_W}
+    \]  
+    De plus, si $B_V = \{v_1, \dots, v_n\}$ alors la matrice $M$ est donnée par 
+    \[
+    M = \left[ \left[ Tv_1 \right]_{B_W}, \dots, \left[ Tv_n \right]_{B_W} \right]
+    \]
+\end{theorem}
+\begin{definition}
+    La matrice $M$ t.q. $M[v]_{B_V} = [Tv]_{B_W}$ est dite la matrice de l'opérateur $T$
+    dans les deux base $B_V, B_W$, notée $M = [T]_{B_V, B_W}$. Si $V = W$ et $B_V = B_W$
+    alors on note $M = [T]_{B_V}$
+\end{definition}
+
+\subsection{Représentation d'un opérateur linéaire dans une nouvelle base}
+\begin{theorem}
+    Soit $T\colon V \to W$ un opérateur linéaire. \\
+    Soit $B_V, B_V^\prime$ deux bases dans $V$ et $B_W, B_W^\prime$ deux bases dans $W$, alors
+    $[T]_{B_V^\prime, B_W^\prime} = P_{B_W^\prime}^{B_W} [T]_{B_V, B_W} P^{B_V^\prime}_{B_V}$ \\
+    Si $V = W$ et $B_V = B_W$, alors $[T]_{B_V} = P_{B_V^\prime}^{B_V} [T]_{B_V} P^{B_V^\prime}_{B_V}$
+\end{theorem}
+\begin{theorem}
+    Soit $T_1, T_2 \colon V \to V$ des opérateurs linéaires, $B_V$ une base dans $V$ et $\scalaire{\alpha}$, alors 
+    les opérateurs suivant sont linéaires, soit $T_1 + T_2, \ \alpha T_1, \ T_1T_2, \ [T_1, T_2]$.
+    Les matrices des opérateurs suivants sont 
+    \begin{align*}
+        1) \quad &[T_1 + T_2]_{B_V} = [T_1]_{B_V} + [T_2]_{B_V}& &2) \quad [\alpha T_1]_{B_V} = \alpha [T_1]_{B_V} \\
+        3) \quad &[T_1T_2]_{B_V} = [T_1]_{B_V}[T_2]_{B_V}& &4) \quad \left[[T_1, T_2]\right]_{B_V} = \left[[T_1]_{B_V}, [T_2]_{B_V}\right]
+    \end{align*}
+\end{theorem}
+
+\subsection{Valeurs et vecteurs propres d'un opérateur}
+\begin{definition}
+    Soit $T\colon V \to V$ un opérateur linéaire, alors 
+    \[v \in V \ \text{vecteur propre de} \ T \iff \exists \ \scalaire{\lambda} \ \text{t.q.} \ Tv = \lambda v\]
+    $\lambda$ est appelé la valeur propre de $T$
+\end{definition}
+\begin{theorem}
+    Si $\dim V \in \N$, alors $\forall \ v \in V$ vecteur propre de $T$, $[v]_B$ vecteur propre de $[T]_B$ \\
+    Cela va de même pour les valeurs propres de $T$
+\end{theorem}
+\begin{definition}
+    L'ensemble des valeurs propres d'un opérateur s'appelle le spectre de l'opérateur
+\end{definition}
+\begin{theorem}
+   $\text{Ker}(T) \neq \{0_V\} \iff \lambda = 0$ valeur propre de $T$, ou $\text{Ker}(T) = \left\{ v \in V \mid Tv = 0_W \right\}$
+\end{theorem}

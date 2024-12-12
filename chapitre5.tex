@@ -52,17 +52,13 @@ Soit $V$ un espace vectoriel. Pour $x \in V$ posons $\hat{x} = f_x$ ou $\myfunc{
 \end{theorem}
 \subsubsection{Comment trouver le vecteur dual de \texorpdfstring{$f \in V^*$}{f in V star}}
 Soit $B = \{b_1, \dots, b_n\}$ une base \underline{orthonormale par rapport à $\scpr{\cdot}{\cdot}_V$} dans $V$ et $f \in V^*$ \\
-Posons $f(b_j) = a_j \in \C^n$. Alors le vecteur dual $x$ à $f$ t.q. $f(v) = \scpr{x}{v}$ est donné par  
+Posons $f(b_j) = a_j \in \C^n$, alors la représentation du vecteur dual $x$ à $f$ dans la base $B$ est donné par 
 \[
-[x]_B = \begin{pmatrix} (a_1)^* \\ \vdots \\ (a_n)^* \end{pmatrix} \implies 
-x = (a_1)^* b_1 + \dots + (a_n)^* b_n
+[x]_B = \begin{pmatrix} (a_1)^* & \dots & (a_n)^* \end{pmatrix}^T 
 \]
-Alors il suffit trouver une base orthonormale par rapport au produit scalaire dans $V$ pour 
-ensuite trouver le vecteur dual à $f$. Prendre note que dans le cas ou le produit scalaire
+Prendre note que dans le cas ou le produit scalaire
 dans $V$ n'est pas le produit scalaire canonique, il est souvent plus simple d'utiliser une 
-autre méthode que de trouver une base orthonormale puisque trouver cette base orthonormale
-implique l'orthonormalisation de Gram-Schmidt ainsi qu'une matrice de changement de base pour
-exprimer $x$ dans la base canonique.
+méthode plus directe que de trouver une base orthonormale par rapport au produit scalaire dans $V$.
 \begin{definition}
     Soit $B = \{u_1, \dots, u_n\}$ une base dans $V$, alors 
     une base $B^* = \{\epsilon_1, \dots, \epsilon_n\}$ dans $V^*$ est dite base dual à 
