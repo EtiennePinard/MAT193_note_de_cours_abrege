@@ -3,8 +3,13 @@
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
 
-\usepackage[shortlabels]{enumitem}
 \usepackage[margin=2cm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[c]{\thepage}
+
+\usepackage[shortlabels]{enumitem}
 \usepackage[hidelinks]{hyperref}
 
 \usepackage{math_and_phy_utils}
@@ -13,26 +18,50 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 
-\theoremstyle{definition}
-\newtheorem{definition}{Définition}[section]
-\newtheorem{lemma}{Lemme}[definition]
+\theoremstyle{plain}
 \newtheorem{theorem}{Théorème}[section]
-\newtheorem{corollary}{Corollaires}[theorem]
+\newtheorem{lemma}[theorem]{Lemme}
+\newtheorem{corollary}[theorem]{Corollaires}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Définition}
 
 \theoremstyle{remark}
 \newtheorem*{remark}{Remarque}
 
-
-\title{MAT193 - Algèbre Linéaire - Résumé}
-\author{Étienne Pinard}
-\date{Compilé le \today}
+\newcommand{\unnumsec}[1]{
+    \refstepcounter{section}
+    \addcontentsline{toc}{section}{#1}
+    \fancyhead[c]{#1}
+    \section*{#1}
+}
 
 \begin{document}
 
 % This is to disable the spacing before a colon of the french babel package. Use \shorthandon{characters} to renable it
 \shorthandoff{:}
 
-\maketitle
+% Gotten from https://tex.stackexchange.com/a/325032
+\begin{titlepage}
+    \centering
+    \vspace*{3in}
+
+    \vspace*{0.5cm}
+
+    \huge
+    \textmd{\textbf{MAT193\ - Algèbre linéaire}}\\
+    \vspace{0.1in} \LARGE \textmd{\textbf{Note de cours abrégé}} \\
+    \vspace{0.1in}\large{Contient toutes les définitions, théorèmes, lemmes et corollaires} 
+
+    \vspace*{\fill}
+    \large Étienne Pinard \\
+    Compilé le \today
+
+    \end{titlepage}
+
+\pagebreak
+
+\fancyhead[c]{Table des matières}
 \tableofcontents
 
 \include{chapitre1}
@@ -41,5 +70,6 @@
 \include{chapitre4}
 \include{chapitre5}
 \include{chapitre6}
+\include{chapitre7}
 
 \end{document}
