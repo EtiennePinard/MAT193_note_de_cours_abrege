@@ -4,75 +4,74 @@
 \subsection{Définition des nombres complexes}
 Considérons la ligne des nombres réels
 \begin{figure}[!htbp]
-\begin{center}
-\def\numberLineLastNumber{7}
-\begin{tikzpicture}
-    \begin{scope}[thick,font=\scriptsize]
-    
-    \draw [<->] (-\numberLineLastNumber - 1,0) -- (\numberLineLastNumber + 1,0);
+    \begin{center}
+        \def\numberLineLastNumber{7}
+        \begin{tikzpicture}
+            \begin{scope}[thick,font=\scriptsize]
 
-    \foreach \n in {-\numberLineLastNumber,...,\numberLineLastNumber}{%
-        \draw (\n,-3pt) -- (\n,3pt)   node [above] {$\n$};
-    }
-\end{scope}
-\end{tikzpicture}
-\end{center}
-\caption{La ligne des nombres réels}
+                \draw [<->] (-\numberLineLastNumber - 1,0) -- (\numberLineLastNumber + 1,0);
+
+                \foreach \n in {-\numberLineLastNumber,...,\numberLineLastNumber}{%
+                        \draw (\n,-3pt) -- (\n,3pt)   node [above] {$\n$};
+                    }
+            \end{scope}
+        \end{tikzpicture}
+    \end{center}
+    \caption{La ligne des nombres réels}
 \end{figure}
 \begin{remark}
     Chaque nombre réel peut être représenté par un vecteur qui commence de 0 et qui a le nombre comme magnitude. L'angle du vecteur est encodé dans le signe du nombre, un nombre positif va avoir un vecteur d'un angle de 0 et un nombre négatif va avoir un vecteur d'un angle de $\pi$
 \end{remark}
 
 \begin{figure}[!htbp]
-\begin{center}
-\def\numberLineLastNumber{7}
-\begin{tikzpicture}
-    \begin{scope}[thick,font=\scriptsize]
-    
-    \draw [<->] (-\numberLineLastNumber - 1,0) -- (\numberLineLastNumber + 1,0);
+    \begin{center}
+        \def\numberLineLastNumber{7}
+        \begin{tikzpicture}
+            \begin{scope}[thick,font=\scriptsize]
 
-    \foreach \n in {-\numberLineLastNumber,...,\numberLineLastNumber}{%
-        \draw (\n,-3pt) -- (\n,3pt)   node [above] {$\n$};
-    }
-    
-    \draw [-, thick, color=red] (0,0) -- (-3,0);
-    \draw [-, thick, color=green] (0,0) -- (7,0);
-    \draw [color=black, fill=black] (-3,0) circle(0.075);
-    \draw [color=black, fill=black] (7,0) circle(0.075);
+                \draw [<->] (-\numberLineLastNumber - 1,0) -- (\numberLineLastNumber + 1,0);
 
-\end{scope}
-\end{tikzpicture}
-\end{center}
-\caption{Le vecteur des nombres -3 et 7 représenté sur la ligne des nombres réels}
+                \foreach \n in {-\numberLineLastNumber,...,\numberLineLastNumber}{%
+                        \draw (\n,-3pt) -- (\n,3pt)   node [above] {$\n$};
+                    }
+
+                \draw [-, thick, color=red] (0,0) -- (-3,0);
+                \draw [-, thick, color=green] (0,0) -- (7,0);
+                \draw [color=black, fill=black] (-3,0) circle(0.075);
+                \draw [color=black, fill=black] (7,0) circle(0.075);
+
+            \end{scope}
+        \end{tikzpicture}
+    \end{center}
+    \caption{Le vecteur des nombres -3 et 7 représenté sur la ligne des nombres réels}
 \end{figure}
 \begin{remark}
     Dans cette représentation, les vecteurs ont seulement des angles de 0 ou $\pi$. Pour que les vecteurs aillent des angles arbitraires, nous devons introduire un autre axe.
 \end{remark}
 \begin{definition}
-    $i$ est l'unité imaginaire telle que $i^2 = -1$ 
+    $i$ est l'unité imaginaire telle que $i^2 = -1$
 \end{definition}
-Comme dans le cas des nombres réels, il est possible de tracer une ligne des nombres imaginaires. Par convention, cette ligne est tracée perpendiculaire à la ligne des nombres réels. Ainsi, la ligne des nombres imaginaires est justement ce qu'il faut pour pouvoir représenter des vecteurs avec des angles arbitraires. 
+Comme dans le cas des nombres réels, il est possible de tracer une ligne des nombres imaginaires. Par convention, cette ligne est tracée perpendiculaire à la ligne des nombres réels. Ainsi, la ligne des nombres imaginaires est justement ce qu'il faut pour pouvoir représenter des vecteurs avec des angles arbitraires.
 \begin{figure}[!htbp]
-\begin{center}
-\begin{tikzpicture}
-    \begin{scope}[thick,font=\scriptsize]
-    
-    
-    \draw [->] (-3.5,0) -- (4,0) node [above]  {Axe réel};
-    \draw [->] (0,-3.5) -- (0,4) node [below right] {Axe imaginaire};
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{scope}[thick,font=\scriptsize]
 
-    \foreach \n in {-3,...,-1,1,2,...,3}{%
-        \draw (\n,-3pt) -- (\n,3pt)   node [above] {$\n$};
-        \draw (-3pt,\n) -- (3pt,\n)   node [right] {$\n i$};}
-        
-    \draw [thick, color=red] (0,0) -- (2,2);
-    \draw [color=black, fill=black] (2,2) circle(0.05);
-    \node [color=black] at (2,2.25) {$ 2+2i$};
-\end{scope}
-\end{tikzpicture}
-\end{center}
-\caption{Représentation du vecteur qui a une magnitude de $2\sqrt{2}$ et un angle de $\frac{\pi}{4}$}
-\label{complex_plane}
+                \draw [->] (-3.5,0) -- (4,0) node [above]  {Axe réel};
+                \draw [->] (0,-3.5) -- (0,4) node [below right] {Axe imaginaire};
+
+                \foreach \n in {-3,...,-1,1,2,...,3}{%
+                        \draw (\n,-3pt) -- (\n,3pt)   node [above] {$\n$};
+                        \draw (-3pt,\n) -- (3pt,\n)   node [right] {$\n i$};}
+
+                \draw [thick, color=red] (0,0) -- (2,2);
+                \draw [color=black, fill=black] (2,2) circle(0.05);
+                \node [color=black] at (2,2.25) {$ 2+2i$};
+            \end{scope}
+        \end{tikzpicture}
+    \end{center}
+    \caption{Représentation du vecteur qui a une magnitude de $2\sqrt{2}$ et un angle de $\frac{\pi}{4}$}
+    \label{complex_plane}
 \end{figure}
 
 \begin{definition}
@@ -82,33 +81,33 @@ Comme dans le cas des nombres réels, il est possible de tracer une ligne des no
 \subsection{Représentation des nombres complexes}
 Considérons la figure suivante:
 \begin{figure}[!htbp]
-\begin{center}
-\begin{tikzpicture}
-    \begin{scope}[thick,font=\scriptsize]
-    \coordinate (start) at (4,0);
-    \coordinate (middle) at (0,0);
-    \coordinate (end) at (2, 3);
-    
-    \draw [->] (-0.5,0) -- (4,0) node [above]  {Axe réel};
-    \draw [->] (0,-0.5) -- (0,4) node [below right] {Axe imaginaire};
-        
-    \draw [thick, color=red] (0,0) -- (2,3);
-    \node [color=black] at (0.88, 1.62) {$r$};
-    \pic [draw, -, "$\theta$", angle eccentricity=1.5] {angle = start--middle--end};
-    
-    \draw [color=blue, fill=blue] (2,3) circle(0.05);
-    \node [color=black] at (2,3.25) {$z \in \C$};
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{scope}[thick,font=\scriptsize]
+                \coordinate (start) at (4,0);
+                \coordinate (middle) at (0,0);
+                \coordinate (end) at (2, 3);
 
-    \draw [thick, color=green] (0,0) -- (2, 0);
-    \node [color=black] at (1, -0.25) {$x$};
-    
-    \draw [thick, color=green] (2,0) -- (2, 3);
-    \node [color=black] at (2.25, 1.5) {$y$};
-     
-\end{scope}
-\end{tikzpicture}
-\end{center}
-\caption{Représentation d'un nombre complexe}
+                \draw [->] (-0.5,0) -- (4,0) node [above]  {Axe réel};
+                \draw [->] (0,-0.5) -- (0,4) node [below right] {Axe imaginaire};
+
+                \draw [thick, color=red] (0,0) -- (2,3);
+                \node [color=black] at (0.88, 1.62) {$r$};
+                \pic [draw, -, "$\theta$", angle eccentricity=1.5] {angle = start--middle--end};
+
+                \draw [color=blue, fill=blue] (2,3) circle(0.05);
+                \node [color=black] at (2,3.25) {$z \in \C$};
+
+                \draw [thick, color=green] (0,0) -- (2, 0);
+                \node [color=black] at (1, -0.25) {$x$};
+
+                \draw [thick, color=green] (2,0) -- (2, 3);
+                \node [color=black] at (2.25, 1.5) {$y$};
+
+            \end{scope}
+        \end{tikzpicture}
+    \end{center}
+    \caption{Représentation d'un nombre complexe}
 \end{figure}
 
 \begin{definition}
@@ -118,10 +117,10 @@ Considérons la figure suivante:
     $y$ est la partie imaginaire de $z$ et est notée $\Ima{z}$
 \end{definition}
 \begin{definition}
-    $r$ est le module de $z$ et est noté $|z|$ 
+    $r$ est le module de $z$ et est noté $|z|$
 \end{definition}
-\begin{lemma} On peut calculer le module de $z$ à partir de sa partie réelle et imaginaire avec 
-\[|z| = r = \sqrt{x^2 + y^2}\] 
+\begin{lemma} On peut calculer le module de $z$ à partir de sa partie réelle et imaginaire avec
+    \[|z| = r = \sqrt{x^2 + y^2}\]
 \end{lemma}
 \begin{definition}
     $\theta$ est l'argument de $z$ noté $\text{Arg}(z)$. Cet argument est unique et par convention est entre $-\pi$ et $\pi$, soit $-\pi < \text{Arg}(z) \leq \pi$.
@@ -132,11 +131,11 @@ Considérons la figure suivante:
 \begin{lemma}
     On peut calculer l'argument de $z$ à partir de sa partie réelle et imaginaire avec
     \[\textup{Arg}(z) = \theta =
-    \begin{cases}
-        \arctan(\frac{y}{x})       & x > 0                            \\
-        \arctan(\frac{y}{x}) - \pi & x < 0                            \\
-        \textup{sign}(y)\frac{\pi}{2}           & x = 0, \ \textup{sign}(y) \ \textup{est la signe de y}
-    \end{cases}\]
+        \begin{cases}
+            \arctan(\frac{y}{x})          & x > 0                                                  \\
+            \arctan(\frac{y}{x}) - \pi    & x < 0                                                  \\
+            \textup{sign}(y)\frac{\pi}{2} & x = 0, \ \textup{sign}(y) \ \textup{est la signe de y}
+        \end{cases}\]
 \end{lemma}
 On peut remarquer qu'un nombre complexe est entièrement déterminé par sa partie réelle et imaginaire. On peut représenter un nombre complexe de trois formes différentes. Si on utilise seulement $x$ et $y$ pour représenter ces deux parties, on obtient la première forme d'un nombre complexe:
 \begin{definition}
@@ -173,21 +172,21 @@ En utilisant la formule d'Euler on obtient la forme exponentielle:
 Le conjugué et le module sont distributifs sur l'addition, la multiplication et la division.
 \begin{center}
     \begin{tabular}{c@{\hskip 1in} c@{\hskip 1in} c}
-        Addition & Multiplication & Division \\
-        $\left(z_1 + z_2\right)^* = z_1^* + z_2^*$ &  $\left(z_1z_2\right)^* = z_1^{*} z_2^*$ &  $\left( \frac{z_1}{z_2}\right)^{*} = \frac{z_1^*}{z_2^*}$  \\
-        $\left|z_1 + z_2\right| = |z_1| + |z_2|$   & $\left|z_1z_2\right| = |z_1||z_2|$      &  $\left| \frac{z_1}{z_2}\right| = \frac{|z_1|}{|z_2|}$
+        Addition                                   & Multiplication                          & Division                                                  \\
+        $\left(z_1 + z_2\right)^* = z_1^* + z_2^*$ & $\left(z_1z_2\right)^* = z_1^{*} z_2^*$ & $\left( \frac{z_1}{z_2}\right)^{*} = \frac{z_1^*}{z_2^*}$ \\
+        $\left|z_1 + z_2\right| = |z_1| + |z_2|$   & $\left|z_1z_2\right| = |z_1||z_2|$      & $\left| \frac{z_1}{z_2}\right| = \frac{|z_1|}{|z_2|}$
     \end{tabular}
 \end{center}
 Le conjugué et le module sont reliés par l'équation
 \[
-zz^* = |z|^2
+    zz^* = |z|^2
 \]
 \subsubsection{Propriétés de l'argument}
 L'argument de $z$ a des propriétés semblables aux propriétés logarithmiques
 \begin{center}
     \begin{tabular}{c@{\hskip 1in}c}
-         Produit à somme & Quotient à différence \\
-         $\arg(z_1z_2) = \arg(z_1) + \arg(z_2)$ & $\arg\left( \frac{z_1}{z_2}\right) = \arg(z_1) - \arg(z_2)$
+        Produit à somme                        & Quotient à différence                                       \\
+        $\arg(z_1z_2) = \arg(z_1) + \arg(z_2)$ & $\arg\left( \frac{z_1}{z_2}\right) = \arg(z_1) - \arg(z_2)$
     \end{tabular}
 \end{center}
 
@@ -212,7 +211,7 @@ Si $w$ est une racine de $z$, alors on a
 \end{remark}
 
 \subsection{Exponentielle  et logarithme}
-Soit $z \in \C$, alors l'exponentielle de $z$ noté $e^z$ est 
+Soit $z \in \C$, alors l'exponentielle de $z$ noté $e^z$ est
 \[
     e^z = e^x e^{iy} = e^x (\cos(y) + i\sin(y))
 \]
@@ -226,16 +225,16 @@ De plus, le logarithme de $z$ noté $\ln{z}$ ou $\log{z}$ est
 \subsection{Puissances complexes}
 Soient $z, w \in \C$ où $w = x + iy$, alors $z$ à la $w$ est donnée par
 \[
-    z^w = |z|^{x} e^{-y\text{Arg}(z)} e^{2\pi yk} e^{ i \left(x\arg(z) + y\ln|z|\right) }, \; k \in \Z 
+    z^w = |z|^{x} e^{-y\text{Arg}(z)} e^{2\pi yk} e^{ i \left(x\arg(z) + y\ln|z|\right) }, \; k \in \Z
 \]
 Il y a deux cas qui déterminent le nombre de valeurs de $z^w$
 \begin{enumerate}
     \item Si $y \neq 0$ alors $z^w$ prend une infinité de valeurs distinctes, puisque $e^{2\pi yk} \neq 1 \ \forall \ k \in \Z$
-    \item Si $y = 0$ alors le nombre de valeurs dépend de $x$ 
-    \begin{enumerate}
-        \item Si $x \in \Q$, alors c'est le cas des racines entières [\ref{whole_roots}]
-        \item Si $x \in \R \backslash \Q$, alors $z^w$ prend une infinité de valeurs avec une partie imaginaires qui varie et une partie réelle qui reste fixe. 
-    \end{enumerate}
+    \item Si $y = 0$ alors le nombre de valeurs dépend de $x$
+          \begin{enumerate}
+              \item Si $x \in \Q$, alors c'est le cas des racines entières [\ref{whole_roots}]
+              \item Si $x \in \R \backslash \Q$, alors $z^w$ prend une infinité de valeurs avec une partie imaginaires qui varie et une partie réelle qui reste fixe.
+          \end{enumerate}
 \end{enumerate}
 \begin{remark}
     Dans ce dernier cas, si $z, w \in \R$ alors, par convention, on prend $k = 0$ pour que $z^w \in \R$.
@@ -244,18 +243,15 @@ Il y a deux cas qui déterminent le nombre de valeurs de $z^w$
 \subsection{Théorème fondamental de l'algèbre}
 Considérons le polynôme complexe $p(x)$ de degré $n \in \N$. Il est possible d'écrire $p(x)$ sous sa forme générale, qui est:
 \[
-p(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0, \; a_j \in \C, \; a_n \neq 0
+    p(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0, \; a_j \in \C, \; a_n \neq 0
 \]
 \begin{definition}
-Les racines d'un polynôme complexe sont des valeurs complexes $t \in \C$ telles que $p(t) = 0$    
-\end{definition} 
-\begin{definition} % TODO: This is a bit bull
-    La multiplicité d'une racine d'un polynôme est un nombre naturel qui dénote le nombre de fois que la courbe tracée par le polynôme traverse la racine
+    Les racines d'un polynôme complexe sont des valeurs complexes $t \in \C$ telles que $p(t) = 0$
 \end{definition}
 \begin{lemma}
     Il est possible d'écrire $p(x)$ en terme de ses $m$ racines, $\{t_1, t_2, \dots ,t_m\}$, c-à-d
-\[ p(x) = a_n(x - t_1)^{k_1} (x - t_2)^{k_2} \dots (x - t_m)^{k_m} \]
-où $k_j$ est la multiplicité de la racine $t_j$
+    \[ p(x) = a_n(x - t_1)^{k_1} (x - t_2)^{k_2} \dots (x - t_m)^{k_m} \]
+    où $k_j$ est la multiplicité de la racine $t_j$
 \end{lemma}
 \begin{lemma}
     \label{sum_multiplicity}
