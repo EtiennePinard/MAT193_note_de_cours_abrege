@@ -2,17 +2,29 @@
 
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
+\usepackage[margin = 2cm]{geometry}
+\usepackage[shortlabels]{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{math_and_phy_utils}
+\usepackage[pdftex]{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{angles,quotes, matrix,arrows,decorations.pathmorphing}
 
-\usepackage[margin=2cm]{geometry}
 \usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+% The footnote code is from https://tex.stackexchange.com/a/74992
+\newcommand{\fancyfootnotetext}[2]{%
+  \fancypagestyle{dingens}{%
+    \fancyfoot[C]{}
+    \fancyfoot[L]{\footnotemark[#1]\footnotesize #2}%
+    \fancyfoot[R]{\thepage}
+  }%
+  \thispagestyle{dingens}%
+}
+
 \pagestyle{fancy}
 \fancyhead{}
 \fancyfoot[c]{\thepage}
-
-\usepackage[shortlabels]{enumitem}
-\usepackage[hidelinks]{hyperref}
-
-\usepackage{math_and_phy_utils}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -21,24 +33,27 @@
 \theoremstyle{plain}
 \newtheorem{theorem}{Théorème}[section]
 \newtheorem{lemma}[theorem]{Lemme}
-\newtheorem{corollary}[theorem]{Corollaires}
+\newtheorem{corollary}[theorem]{Corollaire}
 
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Définition}
 
 \theoremstyle{remark}
 \newtheorem*{remark}{Remarque}
+\newtheorem*{note}{Note}
+\AfterEndEnvironment{note}{\noindent\ignorespaces}
+\AfterEndEnvironment{remark}{\noindent\ignorespaces}
 
 \newcommand{\unnumsec}[1]{
     \refstepcounter{section}
-    \addcontentsline{toc}{section}{#1}
-    \fancyhead[c]{#1}
-    \section*{#1}
+    \addcontentsline{toc}{section}{Chapitre \thesection: #1}
+    \fancyhead[c]{Chapitre \thesection: #1}
+    \section*{Chapitre \thesection: #1}
 }
 
 \begin{document}
 
-% This is to disable the spacing before a colon of the french babel package. Use \shorthandon{characters} to renable it
+% This is to disable the spacing before a colon of the french babel package. Use \shorthandon{:} to renable it
 \shorthandoff{:}
 
 % Gotten from https://tex.stackexchange.com/a/325032
@@ -64,7 +79,6 @@
 \fancyhead[c]{Table des matières}
 \tableofcontents
 
-\setlength{\headheight}{14pt}.
 \include{chapitre1}
 \include{chapitre2}
 \include{chapitre3}
