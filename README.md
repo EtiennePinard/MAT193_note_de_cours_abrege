@@ -3,4 +3,4 @@ Un document qui porte sur les notions de bases de l'algèbre linéaire. Le docum
 ## Comment compiler le document latex en pdf
 1. Avoir latex d'installer (https://www.latex-project.org/get/)
 2. Cloner le repo
-3. Exécuter ``` latexmk -pdf note_de_cours_abrege.tex ``` pour compiler le document dans un pdf
+3. Exécuter ``` latexmk -pdf main.tex ``` pour compiler le document dans un pdf
