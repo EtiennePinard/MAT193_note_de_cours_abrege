@@ -1,5 +1,5 @@
-# Note de cours abrégé du cours d'Algèbre Linéaire (MAT193) dans la session d'automne 2024
-
+# Algèbre Linéaire 
+Un document qui porte sur les notions de bases de l'algèbre linéaire. Le document est basé sur le cours MAT193 de l'Université de Sherbrooke
 ## Comment compiler le document latex en pdf
 1. Avoir latex d'installer (https://www.latex-project.org/get/)
 2. Cloner le repo
