@@ -1,4 +1,7 @@
+# VSCode 
 .vscode
+
+# LaTex
 *.aux
 *.fls
 *.log
@@ -7,3 +10,4 @@
 *.out
 *.toc
 *.dvi
+*.pdf

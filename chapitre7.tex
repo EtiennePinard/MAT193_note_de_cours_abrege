@@ -1,4 +1,4 @@
-\unnumsec{Chapitre 7: Opérateurs inverses, hermitiens et unitaires}
+\unnumsec{Opérateurs inverses, hermitiens et unitaires}
 
 \subsection{Opérateurs inverses}
 Soit $T\colon V \to W$ un opérateur linéaire
@@ -8,7 +8,7 @@ Soit $T\colon V \to W$ un opérateur linéaire
 \begin{definition}
     L'opérateur inverse de $T$ est $\myfunc{T^{-1}}{W}{V}{w}{v}$ 
 \end{definition}
-Soit $B_V, B_W$ des bases dans $V, W$ respectivement 
+Soient $B_V, B_W$ des bases dans $V, W$ respectivement 
 \begin{theorem}
     $T$ inversible $\iff \dim V = \dim W$ et $[T]_{B_V, B_W}$ inversible \\
     Dans ce cas, $T^{-1} = [T^{-1}]_{B_W, B_V} = \left([T]_{B_V, B_W}\right)^{-1}$
@@ -21,7 +21,7 @@ Soit $B_V, B_W$ des bases dans $V, W$ respectivement
 \end{remark}
 
 \subsubsection{Propriétés de l'opérateur inverse}
-Soit $T, S\colon V \to W$ des opérateurs linéaires inversibles
+Soient $T, S\colon V \to W$ des opérateurs linéaires inversibles
 \begin{enumerate}
     \item $T^{-1}\colon W \to V$ est linéaire
     \item $[T^{-1}]_{B_W, B_V} = \left([T]_{B_V, B_W}\right)^{-1}$
@@ -38,27 +38,27 @@ Soit $A\colon V \to V$ un opérateur linéaire
     $A$ hermitien $\iff [A]_B$ hermitien 
 \end{definition}
 \begin{theorem}
-    Peut importe la base $B$ choisi, si $A$ hermitien alors $[A]_B$ hermitien
+    Peu importe la base $B$ choisie, si $A$ hermitien alors $[A]_B$ hermitien
 \end{theorem}
 \begin{remark}
     Le théorème nous permet de justifier la définition d'un opérateur hermitien, puisque 
-    le théorème prouve que la définition ne dépend pas de la base choisi
+    le théorème prouve que la définition ne dépend pas de la base choisie
 \end{remark}
 
 \subsubsection{Propriétés de l'opérateur hermitien}
-Soit $A, T\colon V \to V$. Les opérateurs suivants sont hermitiens
+Soient $A, T\colon V \to V$. Les opérateurs suivants sont hermitiens
 \begin{align*}
     1. \quad A + T& &2. \quad \alpha A \ \text{si} \ \alpha \in \R& &3. \quad AT \ \text{si} \ A,T \ \text{commute}& &4. \quad A^n, T^n& &5. \quad A^{-1} \ \text{si} \ A \ \text{inversible} 
 \end{align*}
 De plus, un opérateur hermitien est indépendant dans le produit scalaire. 
 \begin{lemma}
-    Soit $v_1, v_2 \in V$, alors $\scpr{v_1}{Av_2}_V = \scpr{Av_1}{v_2}_V$
+    Soient $v_1, v_2 \in V$, alors $\scpr{v_1}{Av_2}_V = \scpr{Av_1}{v_2}_V$
 \end{lemma}
 \noindent
-Dans la notation de Dirac, on note cette propriété comme tel: $\bra{v_1}A\ket{v_2}$,
+Dans la notation de Dirac, on note cette propriété comme telle: $\bra{v_1}A\ket{v_2}$,
 ce qui indique que $A$ peut être appliqué à $\bra{v_1}$ ou $\ket{v_2}$
 
-\subsection{Opérateur unitaire}
+\subsection{Opérateurs unitaires}
 Soit $V$ un espace vectoriel muni d'un produit scalaire $\scpr{\cdot}{\cdot}$ \\
 Soit $B$ une base orthonormale dans $V$ par rapport au produit scalaire dans $V$ \\
 Soit $A\colon V \to V$ un opérateur linéaire
@@ -66,7 +66,7 @@ Soit $A\colon V \to V$ un opérateur linéaire
     $A$ unitaire $\iff [A]_B$ unitaire 
 \end{definition}
 \begin{remark}
-    Comme dans le cas de l'opérateur hermitien, cette définition ne dépend pas de la base $B$ choisi
+    Comme dans le cas de l'opérateur hermitien, cette définition ne dépend pas de la base $B$ choisie
 \end{remark}
 
 \subsubsection{Propriétés de l'opérateur unitaire}

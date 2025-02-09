@@ -1,4 +1,4 @@
-\unnumsec{Valeurs et vecteurs propres d'une matrice carré}
+\unnumsec{Valeurs et vecteurs propres d'une matrice carrée}
 
 \subsection{Valeurs et vecteurs propres}
 Soit $A \in M_{n \times n}(F)$
@@ -7,7 +7,7 @@ Soit $A \in M_{n \times n}(F)$
     Dans ce cas $u$ est dit le vecteur propre de $A$ associé à $\lambda$
 \end{definition}
 \begin{remark}
-    Un vecteur propre est jamais nulle, mais une valeur propre peux être nulle
+    Un vecteur propre n'est jamais nul, mais une valeur propre peut être nulle
 \end{remark}
 \begin{definition}
     Le polynôme caractéristique de $A$ est $\chi_A(\lambda) = \det(A - \lambda I)$
@@ -22,13 +22,13 @@ Soit $A \in M_{n \times n}(F)$
 \begin{enumerate}
     \item Trouver les racines de $\chi_A(\lambda)$
     \item Trouver toutes les solutions linéairement indépendantes du système homogène $(A - \lambda_0 I)X = \mathbb{O}$
-          pour tout $\lambda_0$ valeurs propres de $A$.
-    \item[] Note: Il se peut qu'une valeur propre ait plusieurs vecteurs propres linéairement indépendants.
+          pour toutes $\lambda_0$ valeurs propres de $A$.
+    \item[] Note: Il se peut  qu'une valeur propre ait plusieurs vecteurs propres linéairement indépendants. % TODO: Put this note in the environment
 \end{enumerate}
 \subsubsection{Multiplicités et espace propre}
 Grâce au théorème fondamentale de l'algèbre [\ref{theorem_fondamental_algebra}] on peut
 exprimer le polynôme caractéristique à l'aide de ces racines, qui sont les valeurs propres
-de $A$. Posons que $A$ a $m$ uniques valeurs propres. Alors
+de $A$. Posons que $A$ a $m$  valeurs propres différentes entre elles. Alors
 $\chi_A(\lambda) = (-1)^n(\lambda - \lambda_1)^{k_1}(\lambda - \lambda_2)^{k_2} \dots (\lambda - \lambda_m)^{k_m}
     \quad k_1 + k_2 + \dots + k_m = n, \ k_j \in \N$
 \begin{definition}
@@ -45,28 +45,28 @@ $\chi_A(\lambda) = (-1)^n(\lambda - \lambda_1)^{k_1}(\lambda - \lambda_2)^{k_2} 
     $1 \leq \text{multiplicité géométrique de} \ \lambda_j \leq \text{multiplicité algébrique de} \ \lambda_j \leq n$
 \end{lemma}
 
-\subsection{Propriétés des valeurs propres}
+\subsection{Propriétés des valeurs propres} % Ajouté virgule avant alors et enlevé point en fin de phrse
 Soit $A \in M_{n \times n}(\C)$
 \paragraph{Propriété 1:} Si $B = \{v_1, \dots, v_n\}$ est un ensemble de vecteurs propres de $A$
-associés à des valeurs propres distincts alors $B$ est linéairement indépendant.
+associés à des valeurs propres distinctes, alors $B$ est linéairement indépendant.
 \paragraph{Propriété 2:} Si $\lambda_0$ est une valeur propre de $A$ alors $(\lambda_0)^k$ est une
 valeur propre de $A^k$, $k \in \N$
 \paragraph{Propriété 3:} Si $\lambda_0$ est une valeur propre de $A$ et $A$ est inversible alors
 $\frac{1}{\lambda_0}$ est une valeur propre de $A^{-1}$
 \paragraph{Propriété 4:} Si $\det A = 0$ alors $\lambda_0 = 0$ est une valeur propre de $A$
-\paragraph{Propriété 5:} $\det A = \lambda_1 \dots \lambda_n$ ou $\lambda_j$ est une valeur propre de $A$
-\paragraph{Propriété 6:} $\text{tr} A = \lambda_1 + \dots + \lambda_n$ ou $\lambda_j$ est une valeur propre de $A$
-\paragraph{Propriété 7:} $A$ et $A^T$ ont les même valeurs propres.
+\paragraph{Propriété 5:} $\det A = \lambda_1 \dots \lambda_n$ où $\lambda_j$ est une valeur propre de $A$
+\paragraph{Propriété 6:} $\text{tr} A = \lambda_1 + \dots + \lambda_n$ où $\lambda_j$ est une valeur propre de $A$
+\paragraph{Propriété 7:} $A$ et $A^T$ ont les mêmes valeurs propres.
 \paragraph{Propriété 8:} Si $A$ est triangulaire alors les valeurs propres de $A$ sont sa diagonale.
-\paragraph{Propriété 9:} Les valeurs propres d'une matrice hermitienne sont réels
+\paragraph{Propriété 9:} Les valeurs propres d'une matrice hermitienne sont réelles
 \paragraph{Propriété 10:} Si $A$ est hermitienne et que $v_1, v_2$ sont deux vecteurs propres de
-$A$ associés à deux valeurs propres de $A$ distincts, soit $\lambda_1$ et $\lambda_2$, alors $v_1 \perp v_2$
+$A$ associés à deux valeurs propres de $A$ distinctes, soit $\lambda_1$ et $\lambda_2$, alors $v_1 \perp v_2$
 et $L_{\lambda_1} \perp L_{\lambda_2}$ par rapport au produit scalaire canonique dans $\C^n$
-\paragraph{Propriété 11:} \label{property_11} Si $A$ hermitienne, alors les vecteurs propres de $A$ forment une base orthonormale de $\C^n$
+\paragraph{Propriété 11:} \label{property_11} Si $A$ est hermitienne, alors les vecteurs propres de $A$ forment une base orthonormale de $\C^n$
 
 \subsection{Diagonalisation d'une matrice}
 \begin{definition}
-    Soit $A, P \in M_{n \times n}$ t.q. $P$ inversible, alors $A$ et $P^{-1}AP$ (ou $PAP^{-1}$) sont appellé semblabes
+    Soit $A, P \in M_{n \times n}$ t.q. $P$ inversible, alors $A$ et $P^{-1}AP$ (ou $PAP^{-1}$) sont appellés semblables
 \end{definition}
 \begin{remark}
     $\det(P^{-1}AP) = \det(PAP^{-1}) = \det A$ \\
@@ -76,23 +76,23 @@ et $L_{\lambda_1} \perp L_{\lambda_2}$ par rapport au produit scalaire canonique
     $A \in M_{n \times n}$ est diagonalisable $\iff \exists \ P \in M_{n \times n}$ inversible t.q. $P^{-1}AP$ diagonale
 \end{definition}
 \begin{theorem}
-    $A \in M_{n \times n}$ est diagonalisable $\iff A$ admet $n$ vecteurs propres linéairement indépendant \\
-    Dans ce cas on a que \[P = \begin{bmatrix}
+    $A \in M_{n \times n}$ est diagonalisable $\iff A$ admet $n$ vecteurs propres linéairement indépendants \\
+    Dans ce cas, on a que \[P = \begin{bmatrix}
             v_1 & v_2 & \dots & v_n
-        \end{bmatrix} \ \text{avec} \ v_1, v_2, \dots, v_n \ \text{les vecteurs propres de} \ A\] 
+        \end{bmatrix} \ \text{où} \ v_1, v_2, \dots, v_n \ \text{les vecteurs propres de} \ A\] 
         De plus, on a que
-        \[P^{-1}AP = \text{diag}\{\lambda_1, \dots, \lambda_n\} \ \text{avec} \ \lambda_1, \dots, \lambda_n 
+        \[P^{-1}AP = \text{diag}\{\lambda_1, \dots, \lambda_n\} \ \text{où} \ \lambda_1, \dots, \lambda_n 
         \ \text{les valeurs propres de} \ A\] 
 \end{theorem}
 \begin{corollary}
-    Si $A$ a $n$ valeurs propres distincts, alors $A$ est diagonalisable
+    Si $A$ a $n$ valeurs propres distinctes, alors $A$ est diagonalisable
 \end{corollary}
 \begin{corollary}
     Une matrice hermitienne est toujours diagonalisable à cause de \ref{property_11}
 \end{corollary}
 \begin{corollary}
     \label{hermitienne_implies_unitaire_P}
-    Si $A$ hermitienne alors $\exists \ P$ unitaire t.q. $P^{-1}AP = P^\dagger A P$ diagonale
+    Si $A$ est hermitienne, alors $\exists \ P$ unitaire t.q. $P^{-1}AP = P^\dagger A P$ diagonale
 \end{corollary}
 \begin{remark}
     La preuve de \ref{hermitienne_implies_unitaire_P} utilise cette équivalence, soit
@@ -105,7 +105,7 @@ et $L_{\lambda_1} \perp L_{\lambda_2}$ par rapport au produit scalaire canonique
 \end{remark}
 
 \subsection{Fonctions d'une matrice}
-Soit $f(x) \in \C_n[x]$, ou $\C_n[x]$ est l'espace des polynômes complexes à exposant au plus $n$
+Soit $f(x) \in \C_n[x]$, ou $\C_n[x]$ est l'espace des polynômes complexes dont l'exposant est au plus $n$
 \begin{definition}
     Soit $A \in M_{n \times n}(\C)$, alors $f(A) = \alpha_0 I + \alpha_1 A + \dots + \alpha_n A^n$
 \end{definition}
@@ -114,10 +114,10 @@ Un autre cas considéré dans ce cours est $f(z) = e^z = \sum_{k = 0}^{\infty}\f
     Soit $A \in M_{n \times n}(\C)$, alors $e^A = \sum_{k = 0}^{\infty}\frac{A^k}{k!} = I + A + \frac{A^2}{2!} + \frac{A^3}{3!} + \dots$
 \end{definition}
 
-\subsubsection{Comment calculer \texorpdfstring{$f(A)$}{f(A)}}
-Il a quatre choses qui peut nous aider pour calculer $f(A)$
+\subsubsection{Comment calculer la fonction d'une matrice}
+Il y a quatre éléments qui peuvent nous aider pour calculer $f(A)$
 \begin{enumerate}
-    \item $A$ est nilpotente d'incide $k$, c-à-d que $A^k = \mathbb{O}$, donc on doit seulement 
+    \item $A$ est nilpotente d'indice $k$, c-à-d que $A^k = \mathbb{O}$, donc on doit seulement 
     calculer les $k + 1$ premiers termes de $f(A)$
     \item Il existe une formule pour les puissances de $A$ (souvent prouver par récurrence),
     alors il est possible d'utiliser cette formule pour simplifier le calcul
@@ -127,13 +127,13 @@ Il a quatre choses qui peut nous aider pour calculer $f(A)$
 \end{enumerate}
 \begin{remark}
     Si $A$ est non diagonalisable et qu'il n'existe pas de formule pour les puissances de $A$,
-    il faut calculer tout les termes de $f(A)$ pour obtenir la réponse. 
+    il faut calculer tous les termes de $f(A)$ pour obtenir la réponse. 
 \end{remark}
 
 \subsubsection{Propriétés de l'exponentielle d'une matrice}
 \begin{enumerate}
     \item Comme $A$ commute avec $A^k \ \forall \ k \in \N$ alors $A$ commute avec $e^A$
-    \item Si $AB = BA$, soit que $A$ et $B$ commute alors $e^{A + B} = e^A e^B$
+    \item Si $AB = BA$, c-à-d $A$ et $B$ commute, alors $e^{A + B} = e^A e^B$
     \item $e^A$ inversible $\forall \ A \in M_{n \times n}$ avec $\left(e^A\right)^{-1} = e^{-A}$ 
-    \item Si $A$ est hermitienne alors $e^{iA}$ est unitaire
+    \item Si $A$ est hermitienne, alors $e^{iA}$ est unitaire
 \end{enumerate}

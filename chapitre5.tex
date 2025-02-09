@@ -1,11 +1,11 @@
-\unnumsec{Chapitre 5: Espace dual d'un espace vectoriel}
+\unnumsec{Espace dual d'un espace vectoriel}
 
-\subsection{Fonctionnelles linéaire}
+\subsection{Fonctionnelles linéaires}
 Soit $V$ un espace vectoriel avec les scalaires $F$
 \begin{definition}
-    Une forme, ou une fonctionnelle linéaire est une application
+    Une forme linéaire, ou une fonctionnelle linéaire, est une application
     $f\colon V \to F$ qui, pour tout $u, v \in V$, $\scalaire{\alpha}$,
-    satisfait les deux propriétés suivantes
+    satisfait les deux propriétés suivantes:
     \begin{align*}
         1. \quad f(u + v) = f(u) + f(v)& &2. \quad f(\alpha v) = \alpha f(v)
     \end{align*}
@@ -15,13 +15,13 @@ Soit $V$ un espace vectoriel avec les scalaires $F$
 \end{remark}
 \begin{definition}
     Soit $f_1, f_2$ deux fonctionnelles linéaires. \\
-    Définissons leur somme $f_1 + f_2$ comme tel:
+    Définissons leur somme $f_1 + f_2$ comme telle:
     $(f_1 + f_2)(v) = f_1(v) + f_2(v) \ \forall \ v \in V $ \\
-    Définissons la multiplication par un scalaire $\alpha f_1$ comme tel: 
+    Définissons la multiplication par un scalaire $\alpha f_1$ comme telle: 
     $(\alpha f_1)(v) = \alpha f_1(v) \ \forall \ v \in V$
 \end{definition}
 \begin{lemma}
-    L'ensembles des fonctionnelles linéaires sur $V$ est lui-même un espace vectoriel
+    L'ensemble des fonctionnelles linéaires sur $V$ est lui-même un espace vectoriel
 \end{lemma}
 \begin{definition}
     L'espace des fonctionnelles sur $V$ est appelé l'espace dual de $V$ et est noté $V^*$
@@ -29,8 +29,8 @@ Soit $V$ un espace vectoriel avec les scalaires $F$
 \begin{theorem}
     Soit $B = \{b_1, \dots, b_n\}$ une base dans $V$ avec $[v]_B = \begin{pmatrix}
         v_1 & \dots & v_n \end{pmatrix}^T \ v \in V$. 
-    Alors la base de $V^*$ est $B^* = \{\epsilon_1, \dots, \epsilon_n\}$ avec 
-    $\myfunc{\epsilon_j}{V}{F}{v}{v_j}$, ou $v_j$ est le jème coordonné de $v$ dans le base $B$.
+    Alors la base de $V^*$ est $B^* = \{\epsilon_1, \dots, \epsilon_n\}$ où 
+    $\myfunc{\epsilon_j}{V}{F}{v}{v_j}$, et $v_j$ est la j-ème coordonnée de $v$ dans la base $B$.
 \end{theorem}
 \begin{remark}
     La définition de $\epsilon$ implique que $\epsilon_j(b_k) = \delta_{jk} \ \forall \ b_k \in B$
@@ -43,31 +43,34 @@ Soit $V$ un espace vectoriel avec les scalaires $F$
 \end{corollary}
 
 \subsection{Espace dual dans l'espace vectoriel muni d'un produit scalaire}
-Soit $V$ un espace vectoriel. Pour $x \in V$ posons $\hat{x} = f_x$ ou $\myfunc{f_x}{V}{F}{v}{\scpr{x}{v}}$
+Soit $V$ un espace vectoriel muni d'un produit scalaire $\scpr{\cdot}{\cdot}$
 \begin{definition}
-    On appelle $x = f_x \in V^*$ le vecteur dual de $x$
+    Le vecteur dual de $x \in V$ est un élément de l'espace dual $V^*$ notée $f_x$ ou $\hat{x}$. $f_x$ est la fonctionnelle linéaire qui projette les vecteurs sur $x$, c.-à-d.
+    \[ \myfunc{f_x}{V}{F}{v}{\scpr{x}{v}} \]
 \end{definition}
-\begin{theorem}
-    $\forall \ f \in V^* \ \exists! \ x \in V$ t.q. $f = f_x$
+\begin{theorem} Chaque vecteur de $V$ a un unique vecteur dual, c.-à-d.
+    \[\forall \ f \in V^* \ \exists! \ x \in V \ \text{t.q.} \ f = f_x\]
 \end{theorem}
-\subsubsection{Comment trouver le vecteur dual de \texorpdfstring{$f \in V^*$}{f in V star}}
+\subsubsection{Comment trouver le vecteur dual d'un élément de l'espace dual}
 Soit $B = \{b_1, \dots, b_n\}$ une base \underline{orthonormale par rapport à $\scpr{\cdot}{\cdot}_V$} dans $V$ et $f \in V^*$ \\
-Posons $f(b_j) = a_j \in \C^n$, alors la représentation du vecteur dual $x$ à $f$ dans la base $B$ est donné par 
+Posons $f(b_j) = a_j \in \C^n$, alors la représentation du vecteur dual $x$ à $f$ dans la base $B$ est donnée par 
 \[
 [x]_B = \begin{pmatrix} (a_1)^* & \dots & (a_n)^* \end{pmatrix}^T 
 \]
-Prendre note que dans le cas ou le produit scalaire
-dans $V$ n'est pas le produit scalaire canonique, il est souvent plus simple d'utiliser une 
-méthode plus directe que de trouver une base orthonormale par rapport au produit scalaire dans $V$.
+\begin{note}
+    Dans le cas où le produit scalaire
+    dans $V$ n'est pas le produit scalaire canonique, il est souvent plus simple d'utiliser une 
+    méthode plus directe que de trouver une base orthonormale par rapport au produit scalaire dans $V$.
+\end{note}
 \begin{definition}
     Soit $B = \{u_1, \dots, u_n\}$ une base dans $V$, alors 
     une base $B^* = \{\epsilon_1, \dots, \epsilon_n\}$ dans $V^*$ est dite base dual à 
     $B \iff \epsilon_j(u_k) = \delta_{jk}$ 
 \end{definition}
 \subsection{Notation de Dirac}
-Soit $V$ un espace vectoriel muni d'un produit scalaire
+Soit $V$ un espace vectoriel muni d'un produit scalaire.
 \begin{definition}
     Dans la notation de Dirac, un élément $v \in V$ est noté $\ket{v} \in V$ et $\ket{\cdot}$ est appelé un ket. 
-    Le vecteur dual de $\ket{v}$ est noté $\bra{v}$ et $\bra{\cdot}$ est appelé un bra. L'évaluation de 
-    du vecteur dual $f_v = \ket{v}$ avec un vecteur $x \in V$ est noté $f_v(x) = f_v(\ket{x}) = \braket{v}{x}$
+    Le vecteur dual de $\ket{v}$ est noté $\bra{v}$ et $\bra{\cdot}$ est appelé un bra. L'évaluation
+    du vecteur dual $f_v = \ket{v}$ avec un vecteur $x \in V$ est notée $f_v(x) = f_v(\ket{x}) = \braket{v}{x}$
 \end{definition}
